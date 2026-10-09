@@ -43,6 +43,7 @@ Help and extra work
 Who helped you, gave feedback, was it valuable?
 
 Elijah helped us with the game, during the prompt question of 
+![Difficulties faced](https://github.com/Emannual20/databases-portfolio/blob/main/Reflections/Screenshot%202026-10-09%20182855.png?raw=true)
 
 Who did you help, gave feedback to?
 Did you present, implement, made a PR, or fix something that was crucial for the class in itself?
