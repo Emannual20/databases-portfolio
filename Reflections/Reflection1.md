@@ -8,21 +8,21 @@ My takeaway is the importance and usefulness of databases. Previously, I thought
 
 The topics were interesting, and learning and brainstorming as a team felt more engaging than a lecture with slides. The game was a fun way to learn about SQL as well, how we use human language to pull data from files.
 
-** What was difficult, where did you struggle? **
+**What was difficult, where did you struggle?**
 
 We struggled a little as a team, as my team member Sanjay had never used Git before. We had to assist in their set up, but once we became familiar with the web page it was easier to navigate and find the resources we needed.
 
-** Was there any good/fun “struggling”/exploration? **  
+**Was there any good/fun “struggling”/exploration?**  
 > Any show stoppers – anything where you should reach out to peers or instructors?
 
 During the game, it was funny to see how badly we were struggling, at a certain point we were simply trying our luck with the commands. However, after asking help from the other groups, suchas when Elijah helped us with a few prompts, we managed to understand the language and logic better, and could finish the game on track.
 
-** How was your interaction with peers/instructors? **
+**How was your interaction with peers/instructors?**
 
 It was very fun to work with my team members as well as the teams around us, relating to each others struggles with the game and the satisfaction of getting through each level wa an interesting and rewarding experience. The professor was quite patient and managed to answer my questions, and it was very interesting talking to someone about Singapore and that he loves to eat Durian as well :)   
 
 ## Help and extra work
-**Who helped you, gave feedback, was it valuable? **
+**Who helped you, gave feedback, was it valuable?**
 
 Elijah helped us with the game, during the prompt question of 
 ![Difficulties faced](https://github.com/Emannual20/databases-portfolio/blob/main/Reflections/Screenshot%202026-10-09%20182855.png?raw=true)
