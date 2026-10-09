@@ -1,4 +1,6 @@
-# Personal Portfolio for the IoT/MCU class <at university/school>
+Sebastian's Databases Portfolio (Database Coding Group)
+
+> 
 
 > When you start editing this file, remove this description.
 >
@@ -45,7 +47,8 @@
 
 Author: <replace these pointy brackets with your full name>
 
-My partner is <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
+My partner is <Sanjay>, [portfolio link](https://github.com/partner/iot-portfolio)
+and <Jo Marie>, []
 
 In my team for the final project, I also had the following members:
 - <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
