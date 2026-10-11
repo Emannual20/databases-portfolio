@@ -28,7 +28,7 @@ Using gemini for help, I managed to clone it via the temranial, since that is th
 
 Could not find the instructors GitHub Username, team member Sanjay had to help me with locating the usename and adding the professor as a collaborator
 
-
+I found the .help command the most helpful as it showed me all the commands i needed to use
 
 ## Task Inspirations
 
