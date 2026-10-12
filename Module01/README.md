@@ -30,6 +30,15 @@ Could not find the instructors GitHub Username, team member Sanjay had to help m
 
 I found the .help command the most helpful as it showed me all the commands i needed to use
 
+Task 2:
+
+Lniked my teammates portfolios and sent my links to their portfolios for them link, however it seems like my link for my portfolio has an issue, still troubleshooting the trouble
+
+Task 3:
+
+INstalled UV
+<img width="902" height="482" alt="proof of UV installation" src="https://github.com/user-attachments/assets/5e3ae50f-5f40-493f-910a-e0e3f643eb07" />
+ng)
 ## Task Inspirations
 
 - Inspiration 1
