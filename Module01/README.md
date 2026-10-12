@@ -38,7 +38,17 @@ Task 3:
 
 INstalled UV
 <img width="902" height="482" alt="proof of UV installation" src="https://github.com/user-attachments/assets/5e3ae50f-5f40-493f-910a-e0e3f643eb07" />
-ng)
+
+Task 4:
+Session file (Portofolio evidence): [Shell Tour](Module01/shell-tour.txt)
+                                    [Tour SQL](Module01/tour.sql)
+
+I found the .help command the most helpful as it showed me all the commands i needed to use
+
+Task 5:
+
+
+
 ## Task Inspirations
 
 - Inspiration 1
