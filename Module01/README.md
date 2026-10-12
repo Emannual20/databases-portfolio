@@ -30,24 +30,6 @@ Could not find the instructors GitHub Username, team member Sanjay had to help m
 
 I found the .help command the most helpful as it showed me all the commands i needed to use
 
-Task 5: SQL Game Reflection Questions
-What have you learned about databases and SQL so far, just by playing? (Answer from the game alone — no looking things up.)
-
-SQL uses natural language to pull data from a spreadsheet
-
-We can filter specific rows and columns based on the keywords we call, and can combine SQL commands to specify the data we are trying to retreive
-
-
-Which SQL commands and patterns did you actually use (SELECT, WHERE, ORDER BY, joins, aggregate functions, …)?
-
-In the beginning it was mostly using SELECT, WHERE and AND, calling specific variables by using the names in the header rows.
-
-
-
-
-In your own words — after playing — what is a table, a row, a column, and a query?
-What surprised you? What is still confusing?
-
 ## Task Inspirations
 
 - Inspiration 1
