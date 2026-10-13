@@ -1,0 +1,25 @@
+1. Readings per machine
+  [('cnc-01', 57600), ('cnc-02', 57600), ('cnc-03', 57600)]
+  time: 106.2 ms
+
+2. Peak vibration per machine
+  [('cnc-01', 2.398), ('cnc-02', 3.168), ('cnc-03', 2.55)]
+  time: 85.3 ms
+
+3. Readings above 2.0 mm/s alarm
+  [(11714,)]
+  time: 19.3 ms
+
+
+Directory: C:\Users\gamer\databases-portfolio\Module01
+
+
+Mode                 LastWriteTime         Length Name                    
+----                 -------------         ------ ----                    
+-a----        10/12/2026   5:07 PM       10526720 telemetry.db            
+172800
+
+what would this dataset cost to run in the cloud, and who would pay for it?
+
+At about 172,800 rows and roughly 10 MB, this dataset would cost from a few cents to about $15 a month in the cloud (object storage at the low end, the smallest managed database at the high end), and the machine shop, as the owner of the data and the monitoring system, would be the one paying, either directly or through a monitoring vendor’s subscription fee.
+(Courtesy of Claude)
