@@ -30,6 +30,38 @@ Could not find the instructors GitHub Username, team member Sanjay had to help m
 
 I found the .help command the most helpful as it showed me all the commands i needed to use
 
+Task 4: Which dot command I found most helpful
+
+.schema reading 
+as it allows me to directly read from the database in the command prompt, to verify the data inside
+
+Task 7: LLM asissted-SQL Profitiling task
+
+First Prompt used:
+
+"Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending."
+
+Response:
+(Insert pictures of response here)
+
+Output result of prompt: 
+
+(databases-portfolio) PS C:\Users\gamer\databases-portfolio> uv run sqlite-utils query Module01\telemetry.db "SELECT machine, AVG(spindle_load) AS avg_spindle_load FROM readings WHERE CAST(strftime('%H', ts) AS INTEGER) >= 18 GROUP BY machine ORDER BY avg_spindle_load DESC" --table
+machine      avg_spindle_load
+---------  ------------------
+cnc-03                60.4332
+cnc-01                60.367
+cnc-02                60.3559
+
+Response:
+(Insert picture of response here)
+
+The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
+
+When trying to break the QUERY however, Claude managed to catch itself and fix the error, thus I was unable to break the LLM and get a false QUERY from it.
+
+(insert picture here)
+
 ## Task Inspirations
 
 - Inspiration 1
