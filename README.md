@@ -16,9 +16,9 @@ Sebastian's Databases Portfolio (Database Coding Group)
 Author: <replace these pointy brackets with your full name>
 
 My partners:
-> Sanjay, [portfolio link](https://github.com/yajnas-crpto)
-> Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
-> Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
+- Sanjay, [portfolio link](https://github.com/yajnas-crpto)
+- Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
+- Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
 
 In my team for the final project, I also had the following members:
 - <replace these pointy brackets with their full name>,[portfolio link](https://github.com/partner/iot-portfolio)
