@@ -16,7 +16,7 @@
 
 **What is your take-away, what do you want to remember, what would be your advice? Take-away can be small summary, but better outstanding points.**
 
-My takeaway is the importance and usefulness of databases. Previously, I thought the most important skill in programming was understanding and writing with lagnuages such as Python or C. However, I discovered databases are the backbone of the backend which allows the whole system keep data privately and securely.
+My takeaway is undertnding of reltionships
 
 **What was good?**
 
