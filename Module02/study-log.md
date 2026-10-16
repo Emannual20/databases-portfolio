@@ -17,6 +17,8 @@ Working from a plain-text description to a diagram is the core skill. For each d
 [1:1](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
 
 m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → What extra table do you need, and what is its key?
+
+
 Entity vs. attribute vs. relationship — A maintenance job happens on one machine, is done by one technician on one date; a technician performs many jobs. → Is the job a relationship or an entity? Is the technician an entity or just a name?
 Then prove one: write the CREATE TABLE for your favourite sketch, insert two rows, and show the COUNT query that demonstrates its cardinality.
 
