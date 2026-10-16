@@ -12,14 +12,19 @@ Portfolio evidence: module-02/study-log.md.
 Working from a plain-text description to a diagram is the core skill. For each description below, decide the entities, their attributes, and the relationships with cardinality, then sketch it — hand-drawn, or in Mermaid or diagrams.net.
 
 1:1 — A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Where does the key go? Is the nameplate a separate entity or an attribute of the machine?
-1:n — Each machine carries many sensors; every sensor is installed on exactly one machine. → Which side holds the foreign key?
 
 [1:1](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
 
+1:n — Each machine carries many sensors; every sensor is installed on exactly one machine. → Which side holds the foreign key?
+
+[1:n](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
+
 m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → What extra table do you need, and what is its key?
 
+[1:1](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
 
 Entity vs. attribute vs. relationship — A maintenance job happens on one machine, is done by one technician on one date; a technician performs many jobs. → Is the job a relationship or an entity? Is the technician an entity or just a name?
+
 Then prove one: write the CREATE TABLE for your favourite sketch, insert two rows, and show the COUNT query that demonstrates its cardinality.
 
 Portfolio evidence: your four sketches in module-02/study-log.md (or er-examples.md) plus the one CREATE TABLE + COUNT proof.
