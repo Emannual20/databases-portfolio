@@ -35,6 +35,10 @@ I found the .help command the most helpful as it showed me all the commands i ne
 .schema reading 
 as it allows me to directly read from the database in the command prompt, to verify the data inside
 
+Shell Tour: [Shell-Tour.txt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/shell-tour.txt)
+
+Tour: [Tour.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/tour.sql)
+
 >**Dificulties faced: ** 
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
 
