@@ -8,10 +8,7 @@ By the end of this module, you can:
 5. Load real rows into SQLite and query them from Python using bound parameters.
 6. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
-Module description
-
-
-DaY 1
+Day 1
 
 Forming Taks Pod
 
