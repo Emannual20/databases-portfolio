@@ -16,7 +16,7 @@ Forming Taks Pod
 
 I expect to learn about databases, MYSQL, possibly docker if there is time
 
-Task 1:
+Task 3:
 
 Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.
 
