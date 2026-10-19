@@ -20,9 +20,6 @@ My partners:
 - Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
 =======
-a
-DaY 1
->>>>>>> Stashed changes
 
 ### Task 3:
 > **Difficulties Faced:**
@@ -31,9 +28,9 @@ DaY 1
 > 2. Could not find the instructors GitHub Username, team member Sanjay had to help me with locating the usename and adding the professor as a collaborator.<br>
 > **Solution :** No shame in asking for help!
 
-I found the .help command the most helpful as it showed me all the commands i needed to use
+### Task 4: Which dot command I found most helpful
 
-Task 4: Which dot command I found most helpful
+I found the .help command the most helpful as it showed me all the commands i needed to use
 
 .schema reading 
 as it allows me to directly read from the database in the command prompt, to verify the data inside
