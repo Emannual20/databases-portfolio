@@ -10,6 +10,7 @@ By the end of this module, you can:
 
 ### Task 1: [My portfolio](https://github.com/Emannual20/databases-portfolio)
 My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge
+
 Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
 ### Task 2:
