@@ -21,7 +21,8 @@ My partners:
 
 ### Task 3:
 > Difficulties Faced:
-> Did not really understand part 3, as i was ==confused== between the Program Github CLI and the Github desktop application which i already had isntalled.
+> Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.
+
 ==Using gemini for help, I managed to clone it via the terminal, since that is the main tool that will be used for future lectures. Understanding how to utilize the command prompt on windows will be useful for the future modules to come as we will mainly be working on there.==
 
 Could not find the instructors GitHub Username, team member Sanjay had to help me with locating the usename and adding the professor as a collaborator
