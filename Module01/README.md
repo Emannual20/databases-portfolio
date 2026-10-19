@@ -20,7 +20,7 @@ My partners:
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
 
 ### Task 3:
-
+Difficulties Faced:
 Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.
 
 Using gemini for help, I managed to clone it via the temranial, since that is the main tool that will be sued for future lectures. Understnading how to utilize the command prompt on windows will be useful for the future moduels to come as we will mainly be working on there.
