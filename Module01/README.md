@@ -8,21 +8,17 @@ By the end of this module, you can:
 5. Load real rows into SQLite and query them from Python using bound parameters.
 6. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
-## Task 1: [portfolio](https://github.com/Emannual20/databases-portfolio)
+### Task 1: [My portfolio](https://github.com/Emannual20/databases-portfolio)
+My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge
+Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
-## Task 2:
+### Task 2:
 My partners:
 - Sanjay, [portfolio link](https://github.com/yajnas-crpto)
 - Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
 
-Forming Taks Pod
-
-1. My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge
-
-I expect to learn about databases, MYSQL, possibly docker if there is time
-
-Task 3:
+### Task 3:
 
 Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.
 
