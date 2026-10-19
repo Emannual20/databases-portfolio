@@ -1,4 +1,4 @@
-# Reflection 1 in Module 1
+# Reflection 2 in Module 2
 
 - What is your take-away, what do you want to remember, what would be your advice?
   Take-away can be small summary, but better outstanding points.
@@ -12,11 +12,11 @@
   - Who did you help, gave feedback to?
   - Did you present, implement, made a PR, or fix something that was crucial for the class in itself?
 
-# Reflection 1 (9/10/2026)
+# Reflection 2 (15/10/2026)
 
 **What is your take-away, what do you want to remember, what would be your advice? Take-away can be small summary, but better outstanding points.**
 
-My takeaway is undertnding of reltionships
+My takeaway is undertnding of reltionships. I want to remember the different relationship and methods of wirting we learned today, for example many to one, one to one etc. We also learned about entities, attributes, which are essential terminology for working with databases i nthe future.  
 
 **What was good?**
 
@@ -33,16 +33,12 @@ During the game, it was funny to see how badly we were struggling, at a certain 
 
 **How was your interaction with peers/instructors?**
 
-It was very fun to work with my team members as well as the teams around us, relating to each others struggles with the game and the satisfaction of getting through each level wa an interesting and rewarding experience. The professor was quite patient and managed to answer my questions, and it was very interesting talking to someone about Singapore and that he loves to eat Durian as well :)   
 
 ## Help and extra work
 **Who helped you, gave feedback, was it valuable?**
 
-Elijah helped us with the game, during the prompt question of 
-![Difficulties faced](https://github.com/Emannual20/databases-portfolio/blob/main/Reflections/Screenshot%202026-10-09%20182855.png?raw=true)
-
 **Who did you help, gave feedback to?**
 
-I helped Mohammed with the Github isntallation and copying over the folder, to creat his own portfolio
+I helped our new Pod member Lin with the set up of his template the installation and helping navigate aroun Gtihub. Since our first week, I have learned lot about markdown syntax, using the varios github tools and troublshooting after much of going throuhg my own troubles. This allowed me to assist my new Pod member with his set up, and quickly helped him catch up. 
 
 ** Did you present, implement, made a PR, or fix something that was crucial for the class in itself? **

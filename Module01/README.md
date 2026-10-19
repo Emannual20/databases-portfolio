@@ -11,6 +11,7 @@ By the end of this module, you can:
 ### Task 1: [My portfolio](https://github.com/Emannual20/databases-portfolio)
 My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge
 
+<<<<<<< Updated upstream
 Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
 ### Task 2:
@@ -18,6 +19,10 @@ My partners:
 - Sanjay, [portfolio link](https://github.com/yajnas-crpto)
 - Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
+=======
+a
+DaY 1
+>>>>>>> Stashed changes
 
 ### Task 3:
 > **Difficulties Faced:**
