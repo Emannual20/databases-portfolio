@@ -47,7 +47,7 @@ Generator Script: [generate_telemetry.py](https://github.com/Emannual20/database
 
 Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
 
-Task 7: LLM asissted-SQL Profitiling task
+### Task 7: LLM asissted-SQL Profitiling task
 
 First Prompt used:
 
