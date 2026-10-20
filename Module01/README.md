@@ -59,50 +59,50 @@ Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](h
 > The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
 **Executing in Terminal:** 
-sqlite> SELECT
-   ...>     machine,
-   ...>     AVG(spindle_load) AS avg_spindle_load
-   ...> FROM readings
-   ...> WHERE time(ts) > '18:00:00'
-   ...> GROUP BY machine
-   ...> ORDER BY avg_spindle_load DESC;
-╭─────────┬────────────────────╮
-│ machine │  avg_spindle_load  │
-╞═════════╪════════════════════╡
-│ cnc-03  │ 60.434039449923603 │
-│ cnc-01  │ 60.368453951937767 │
-│ cnc-02  │ 60.357216280038891 │
-╰─────────┴────────────────────╯
+sqlite> SELECT<br>
+   ...>     machine,<br>
+   ...>     AVG(spindle_load) AS avg_spindle_load<br>
+   ...> FROM readings<br>
+   ...> WHERE time(ts) > '18:00:00'<br>
+   ...> GROUP BY machine<br>
+   ...> ORDER BY avg_spindle_load DESC;<br>
+╭─────────┬────────────────────╮<br>
+│ machine │  avg_spindle_load  │<br>
+╞═════════╪════════════════════╡<br>
+│ cnc-03  │ 60.434039449923603 │<br>
+│ cnc-01  │ 60.368453951937767 │<br>
+│ cnc-02  │ 60.357216280038891 │<br>
+╰─────────┴────────────────────╯<br>
 
 Set the over-night definition to 18:00:00 - 06:00:00 <br>
 
-**Executing in Terminal:**
-sqlite> SELECT
-   ...>     machine,
-   ...>     AVG(spindle_load) AS avg_spindle_load
-   ...> FROM readings
-   ...> WHERE time(ts) > '18:00:00' OR time(ts) < '06:00:00'
-   ...> GROUP BY machine
-   ...> ORDER BY avg_spindle_load DESC;
-╭─────────┬────────────────────╮
-│ machine │  avg_spindle_load  │
-╞═════════╪════════════════════╡
-│ cnc-02  │ 60.205972636988683 │
-│ cnc-03  │ 60.202878672130012 │
-│ cnc-01  │ 60.185554552399474 │
-╰─────────┴────────────────────╯
+**Executing in Terminal:**<br>
+sqlite> SELECT<br>
+   ...>     machine,<br>
+   ...>     AVG(spindle_load) AS avg_spindle_load<br>
+   ...> FROM readings<br>
+   ...> WHERE time(ts) > '18:00:00' OR time(ts) < '06:00:00'<br>
+   ...> GROUP BY machine<br>
+   ...> ORDER BY avg_spindle_load DESC;<br>
+╭─────────┬────────────────────╮<br>
+│ machine │  avg_spindle_load  │<br>
+╞═════════╪════════════════════╡<br>
+│ cnc-02  │ 60.205972636988683 │<br>
+│ cnc-03  │ 60.202878672130012 │<br>
+│ cnc-01  │ 60.185554552399474 │<br>
+╰─────────┴────────────────────╯<br>
 
 **Second prompt:**
 EXPLAIN QUERY PLAN "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
 
 **Claude's Response:**
-QUERY PLAN
-|--SCAN readings
-|--USE TEMP B-TREE FOR GROUP BY
-`--USE TEMP B-TREE FOR ORDER BY
+QUERY PLAN<br>
+|--SCAN readings<br>
+|--USE TEMP B-TREE FOR GROUP BY<br>
+`--USE TEMP B-TREE FOR ORDER BY<br>
 
 **Attempting to break Claude (Broken Prompt):**
-"Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."
+"Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."<br>
 
 ![Claude Response to Broken Prompt](<img width="901" height="709" alt="image" src="https://github.com/user-attachments/assets/ff746951-ffd7-4a1d-a5c7-fef406ac4e5c" />)
 
