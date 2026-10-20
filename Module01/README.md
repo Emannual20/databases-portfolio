@@ -9,9 +9,7 @@ By the end of this module, you can:
 6. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
 ### Task 1: [My portfolio](https://github.com/Emannual20/databases-portfolio)
-My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge
-
-<<<<<<< Updated upstream
+My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge<br>
 Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
 ### Task 2:
@@ -19,7 +17,6 @@ My partners:
 - Sanjay, [portfolio link](https://github.com/yajnas-crpto)
 - Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
-=======
 
 ### Task 3:
 > **Difficulties Faced:**
@@ -28,16 +25,18 @@ My partners:
 > 2. Could not find the instructors GitHub Username, team member Sanjay had to help me with locating the usename and adding the professor as a collaborator.<br>
 > **Solution :** No shame in asking for help!
 
-### Task 4: Which dot command I found most helpful
+UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)
+Committed PyProject: [Pyproject.toml](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)
+UV Lock: [uv.lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)
 
+### Task 4: Which dot command I found most helpful
+Shell Tour: [Shell-Tour.txt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/shell-tour.txt)
+
+Tour: [Tour.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/tour.sql)
 I found the .help command the most helpful as it showed me all the commands i needed to use
 
 .schema reading 
 as it allows me to directly read from the database in the command prompt, to verify the data inside
-
-Shell Tour: [Shell-Tour.txt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/shell-tour.txt)
-
-Tour: [Tour.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/tour.sql)
 
 >**Dificulties faced: ** 
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
