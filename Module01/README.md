@@ -48,6 +48,22 @@ SQL game progress and reflectioncan be found here: [sql-island.md](https://githu
 
 Generator Script: [generate_telemetry.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
 
+.db File Size:
+
+Name           Length
+----           ------
+telemetry.db 10526720
+
+Row Count:
+
+╭──────────╮
+│ COUNT(*) │
+╞══════════╡
+│   172800 │
+╰──────────╯
+
+What would this dataset cost to run in the cloud, and who would pay for it?
+
 
 
 Task 7: LLM asissted-SQL Profitiling task

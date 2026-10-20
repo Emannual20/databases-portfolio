@@ -16,8 +16,15 @@ Directory: C:\Users\gamer\databases-portfolio\Module01
 
 Mode                 LastWriteTime         Length Name                    
 ----                 -------------         ------ ----                    
--a----        10/12/2026   5:07 PM       10526720 telemetry.db            
-172800
+-a----        10/12/2026   5:07 PM       10526720 telemetry.db    
+
+
+(databases-portfolio) PS C:\Users\gamer\databases-portfolio> sqlite3 Module01\telemetry.db "SELECT COUNT(*) FROM readings;"
+╭──────────╮
+│ COUNT(*) │
+╞══════════╡
+│   172800 │
+╰──────────╯
 
 what would this dataset cost to run in the cloud, and who would pay for it?
 
