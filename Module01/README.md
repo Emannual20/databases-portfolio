@@ -41,6 +41,15 @@ as it allows me to directly read from the database in the command prompt, to ver
 >**Dificulties faced: ** 
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
 
+### Task 5: 
+SQL game progress and reflectioncan be found here: [sql-island.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/sql-island.md)
+
+### Task 6:
+
+Generator Script: [generate_telemetry.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
+
+
+
 Task 7: LLM asissted-SQL Profitiling task
 
 First Prompt used:
@@ -53,6 +62,7 @@ Response:
 Output result of prompt: 
 
 (databases-portfolio) PS C:\Users\gamer\databases-portfolio> uv run sqlite-utils query Module01\telemetry.db "SELECT machine, AVG(spindle_load) AS avg_spindle_load FROM readings WHERE CAST(strftime('%H', ts) AS INTEGER) >= 18 GROUP BY machine ORDER BY avg_spindle_load DESC" --table
+
 machine      avg_spindle_load
 ---------  ------------------
 cnc-03                60.4332
