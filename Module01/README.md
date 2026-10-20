@@ -58,28 +58,51 @@ Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](h
 > Notes:
 > The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
-**Second prompt :**
+**Executing in Terminal:** 
+sqlite> SELECT
+   ...>     machine,
+   ...>     AVG(spindle_load) AS avg_spindle_load
+   ...> FROM readings
+   ...> WHERE time(ts) > '18:00:00'
+   ...> GROUP BY machine
+   ...> ORDER BY avg_spindle_load DESC;
+╭─────────┬────────────────────╮
+│ machine │  avg_spindle_load  │
+╞═════════╪════════════════════╡
+│ cnc-03  │ 60.434039449923603 │
+│ cnc-01  │ 60.368453951937767 │
+│ cnc-02  │ 60.357216280038891 │
+╰─────────┴────────────────────╯
+
+Set the over-night definition to 18:00:00 - 06:00:00 <br>
+
+**Executing in Terminal:**
+sqlite> SELECT
+   ...>     machine,
+   ...>     AVG(spindle_load) AS avg_spindle_load
+   ...> FROM readings
+   ...> WHERE time(ts) > '18:00:00' OR time(ts) < '06:00:00'
+   ...> GROUP BY machine
+   ...> ORDER BY avg_spindle_load DESC;
+╭─────────┬────────────────────╮
+│ machine │  avg_spindle_load  │
+╞═════════╪════════════════════╡
+│ cnc-02  │ 60.205972636988683 │
+│ cnc-03  │ 60.202878672130012 │
+│ cnc-01  │ 60.185554552399474 │
+╰─────────┴────────────────────╯
+
+**Second prompt:**
 EXPLAIN QUERY PLAN "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
 
-Claude's Response:
-
+**Claude's Response:**
 QUERY PLAN
 |--SCAN readings
 |--USE TEMP B-TREE FOR GROUP BY
 `--USE TEMP B-TREE FOR ORDER BY
 
-(databases-portfolio) PS C:\Users\gamer\databases-portfolio> uv run sqlite-utils query Module01\telemetry.db "SELECT machine, AVG(spindle_load) AS avg_spindle_load FROM readings WHERE CAST(strftime('%H', ts) AS INTEGER) >= 18 GROUP BY machine ORDER BY avg_spindle_load DESC" --table
-
-machine      avg_spindle_load
----------  ------------------
-cnc-03                60.4332
-cnc-01                60.367
-cnc-02                60.3559
-
-Response:
-(Insert picture of response here)
-
-When trying to break the QUERY however, Claude managed to catch itself and fix the error, thus I was unable to break the LLM and get a false QUERY from it.
+**Attempting to break Claude (Broken Prompt):**
+"Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."
 
 (insert picture here)
 
