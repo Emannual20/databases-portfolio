@@ -1,4 +1,4 @@
-##SQL-Island Game
+## SQL-Island Game
 
 **1. What have you learned about databases and SQL so far, just by playing? (Answer from the game alone — no looking things up.)**
 
