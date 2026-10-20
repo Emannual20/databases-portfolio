@@ -19,7 +19,7 @@ My partners:
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
 
 ### Task 3:
-> **Difficulties Faced:**
+> **Difficulties Faced :**
 > 1. Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.<br>
 > **Solution:** Using gemini for help, I managed to clone it via the terminal, since that is the main tool that will be used for future lectures. Understanding how to utilize the command prompt on windows will be useful for the future modules to come as we will mainly be working on there.
 > 2. Could not find the instructors GitHub Username, team member Sanjay had to help me with locating the usename and adding the professor as a collaborator.<br>
@@ -36,19 +36,16 @@ Tour: [Tour.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Mod
 Which dot command did you find the most helpful?<br>
 I found the .help command the most helpful as it showed me all the commands i needed to use. And I also found .schema reading helpful as it allows me to directly read from the database in the command prompt, to verify the data inside.
 
->**Dificulties faced: ** 
+>**Dificulties faced :** 
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
 
 ### Task 5: 
 SQL game progress and reflectioncan be found here: [sql-island.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/sql-island.md)
 
 ### Task 6:
-
 Generator Script: [generate_telemetry.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
 
-Queries, File Size, Row Count and answers: 
-
-
+Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
 
 Task 7: LLM asissted-SQL Profitiling task
 
