@@ -49,14 +49,24 @@ Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](h
 
 ### Task 7: LLM asissted-SQL Profitiling task
 
-First Prompt used:
+**First Prompt used :**
+"Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
 
-"Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending."
+**Output result of prompt :** 
+![Response](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/Claude_Prompt_Response.png)
 
-Response:
-(Insert pictures of response here)
+> Notes:
+> The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
-Output result of prompt: 
+**Second prompt :**
+EXPLAIN QUERY PLAN "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
+
+Claude's Response:
+
+QUERY PLAN
+|--SCAN readings
+|--USE TEMP B-TREE FOR GROUP BY
+`--USE TEMP B-TREE FOR ORDER BY
 
 (databases-portfolio) PS C:\Users\gamer\databases-portfolio> uv run sqlite-utils query Module01\telemetry.db "SELECT machine, AVG(spindle_load) AS avg_spindle_load FROM readings WHERE CAST(strftime('%H', ts) AS INTEGER) >= 18 GROUP BY machine ORDER BY avg_spindle_load DESC" --table
 
@@ -68,8 +78,6 @@ cnc-02                60.3559
 
 Response:
 (Insert picture of response here)
-
-The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
 When trying to break the QUERY however, Claude managed to catch itself and fix the error, thus I was unable to break the LLM and get a false QUERY from it.
 
