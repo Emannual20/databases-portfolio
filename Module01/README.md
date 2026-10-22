@@ -138,10 +138,10 @@ Different output modes like .mode box or .mode json are simply different ways to
 **Markdown Mode:**<br>
 ![Markdown Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/markdown_mode.png)
 
-Insert Mode:
-(Upload Insert Mode image and Insert Insert Mode picture here)
-<br>
-Interst Result.json file here for portfolio evidence
+**Insert Mode:**<br>
+![Intert Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/insert_mode.png)
+
+Interst Result.json file here for portfolio evidence: [result.json](
 <br>
 
 Size of Back Up File (Insert backup.db file here): 10280KB
