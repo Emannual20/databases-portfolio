@@ -84,6 +84,8 @@ sqlite> SELECT<br>
    ...> WHERE time(ts) > '18:00:00' OR time(ts) < '06:00:00'<br>
    ...> GROUP BY machine<br>
    ...> ORDER BY avg_spindle_load DESC;<br>
+
+```text
 ╭─────────┬────────────────────╮<br>
 │ machine │  avg_spindle_load  │<br>
 ╞═════════╪════════════════════╡<br>
@@ -91,6 +93,7 @@ sqlite> SELECT<br>
 │ cnc-03  │ 60.202878672130012 │<br>
 │ cnc-01  │ 60.185554552399474 │<br>
 ╰─────────┴────────────────────╯<br>
+```
 
 **Second prompt:**
 EXPLAIN QUERY PLAN "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
