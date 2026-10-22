@@ -158,6 +158,24 @@ Output from joining Tables:
 **Suprising Command:**
 Surprisingly, VACUUM is a compaction tool that had nothing to compact: the database had never had a single row deleted, so it contained zero wasted space, and the “compacted” copy came out byte-for-byte the same size as the original.
 
+### Task 10: Datasette - Facets, filters, and the JSON API
+
+Base URL: http://127.0.0.1:8001/telemetry/readings
+57,600 rows where machine = "cnc-01" sorted by rowid: http://127.0.0.1:8001/telemetry/readings?_sort=rowid&machine__exact=cnc-01
+
+Facet By temperature where machine = "cnc-01":
+```
+temp_c >30 ✖
+
+44.52 126
+44.26 121
+44.67 120
+44.76 120
+44.35 119
+44.36 118 
+...
+```
+
 
 ## Task Inspirations
 
