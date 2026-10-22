@@ -59,14 +59,14 @@ Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](h
 > The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
 **Executing in Terminal:** 
-sqlite> SELECT<br>
-   ...>     machine,<br>
-   ...>     AVG(spindle_load) AS avg_spindle_load<br>
-   ...> FROM readings<br>
-   ...> WHERE time(ts) > '18:00:00'<br>
-   ...> GROUP BY machine<br>
-   ...> ORDER BY avg_spindle_load DESC;<br>
 ```
+sqlite> SELECT
+   ...>     machine,
+   ...>     AVG(spindle_load) AS avg_spindle_load
+   ...> FROM readings
+   ...> WHERE time(ts) > '18:00:00'
+   ...> GROUP BY machine
+   ...> ORDER BY avg_spindle_load DESC;
 ╭─────────┬────────────────────╮
 │ machine │  avg_spindle_load  │
 ╞═════════╪════════════════════╡
@@ -99,11 +99,12 @@ sqlite> SELECT
 EXPLAIN QUERY PLAN "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
 
 **Claude's Response:**
-QUERY PLAN<br>
-|--SCAN readings<br>
-|--USE TEMP B-TREE FOR GROUP BY<br>
-`--USE TEMP B-TREE FOR ORDER BY<br>
-
+```
+QUERY PLAN
+|--SCAN readings
+|--USE TEMP B-TREE FOR GROUP BY
+`--USE TEMP B-TREE FOR ORDER BY
+```
 **Attempting to break Claude (Broken Prompt):**
 "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."<br>
 
