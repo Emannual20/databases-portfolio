@@ -1,4 +1,19 @@
 # Module 3
+
+Pod Study"
+
+My Part: Clause Order
+
+Written Order (Syntax) means the strict sequence we must write SQL query in the editor, or else a syntax eror will be thrown.
+
+Logial Execution Order: <br>
+  Clause:<br>
+1) FROM & JOIN (Identifies the base tabls and joins them rtogether in a working virtual dataset)
+2) WHERE (Filters individual raw rows based on conditions, e.g. "WHERE role = 'Butcher')
+3) GROUP BY (Groups the remaining filtered rows into categroeis/buckets based on shared values)
+4) HAVING (Filers grouped/aggregated buckets)
+5) SELECT (Computes final expressions, evaluates functions and applies column aliases)
+6) DISTINCT  
 ## Task ...
 
 This task was executed by myself.
