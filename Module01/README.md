@@ -59,21 +59,22 @@ Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](h
 > The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
 **Executing in Terminal:** 
-sqlite> SELECT<br>
-   ...>     machine,<br>
-   ...>     AVG(spindle_load) AS avg_spindle_load<br>
-   ...> FROM readings<br>
-   ...> WHERE time(ts) > '18:00:00'<br>
-   ...> GROUP BY machine<br>
-   ...> ORDER BY avg_spindle_load DESC;<br>
-╭─────────┬────────────────────╮<br>
-│ machine │  avg_spindle_load  │<br>
-╞═════════╪════════════════════╡<br>
-│ cnc-03  │ 60.434039449923603 │<br>
-│ cnc-01  │ 60.368453951937767 │<br>
-│ cnc-02  │ 60.357216280038891 │<br>
-╰─────────┴────────────────────╯<br>
-
+```
+sqlite> SELECT
+   ...>     machine,
+   ...>     AVG(spindle_load) AS avg_spindle_load
+   ...> FROM readings
+   ...> WHERE time(ts) > '18:00:00'
+   ...> GROUP BY machine
+   ...> ORDER BY avg_spindle_load DESC;
+╭─────────┬────────────────────╮
+│ machine │  avg_spindle_load  │
+╞═════════╪════════════════════╡
+│ cnc-03  │ 60.434039449923603 │
+│ cnc-01  │ 60.368453951937767 │
+│ cnc-02  │ 60.357216280038891 │
+╰─────────┴────────────────────╯
+```
 Set the over-night definition to 18:00:00 - 06:00:00 <br>
 
 **Executing in Terminal:**
@@ -97,15 +98,17 @@ sqlite> SELECT
 EXPLAIN QUERY PLAN "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
 
 **Claude's Response:**
-QUERY PLAN<br>
-|--SCAN readings<br>
-|--USE TEMP B-TREE FOR GROUP BY<br>
-`--USE TEMP B-TREE FOR ORDER BY<br>
-
+```
+QUERY PLAN
+|--SCAN readings
+|--USE TEMP B-TREE FOR GROUP BY
+`--USE TEMP B-TREE FOR ORDER BY
+```
 **Attempting to break Claude (Broken Prompt):**
 "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."<br>
 
-![Claude Response to Broken Prompt](<img width="901" height="709" alt="image" src="https://github.com/user-attachments/assets/ff746951-ffd7-4a1d-a5c7-fef406ac4e5c" />)
+**Claude's Response:**
+![Claude Response to Broken Prompt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/broken_prompt_response.png)
 
 **Verification Paragraph:**
 In the initial prompt, the model decided that overnight implied 18:00:00 - 00:00:00, and made its own assumption. However, it gave a suggestion to change the timeframe to suit the 18:00:00 - 06:00:00 tiemframe as the real overnight definition. By running both commands, we can identofy the difference and catch the discrepancy of using the wrong prompt with poor boundaries set. <br>
@@ -126,14 +129,14 @@ Keeping SQL in a file, reduces having to manually type repeated commands, we can
 
 Different output modes like .mode box or .mode json are simply different ways to present the data visually in the terminal.
 
-Box Mode:
-(Upload Box Mode image and Insert Box Mode picture here)
+**Box Mode:**
+![Box Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/box_mode.png)
 
-Json Mode:
-(Upload json Mode image and Insert json Mode picture here)
+**Json Mode:**
+![Json Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/json_mode.png)
 
-Markdown Mode:
-(Upload markdown Mode image and Insert markdown Mode picture here)
+**Markdown Mode:**
+![Markdown Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/markdown_mode.png)
 
 Insert Mode:
 (Upload Insert Mode image and Insert Insert Mode picture here)
