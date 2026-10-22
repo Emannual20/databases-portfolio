@@ -108,6 +108,7 @@ QUERY PLAN
 **Attempting to break Claude (Broken Prompt):**
 "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."<br>
 
+**Claude's Response:**
 ![Claude Response to Broken Prompt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/broken_prompt_response.png)
 
 **Verification Paragraph:**
