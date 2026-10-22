@@ -130,14 +130,14 @@ Keeping SQL in a file, reduces having to manually type repeated commands, we can
 
 Different output modes like .mode box or .mode json are simply different ways to present the data visually in the terminal.
 
-Box Mode:
-(Upload Box Mode image and Insert Box Mode picture here)
+**Box Mode:**
+![Box Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/box_mode.png)
 
-Json Mode:
-(Upload json Mode image and Insert json Mode picture here)
+**Json Mode:**
+![Json Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/json_mode.png)
 
-Markdown Mode:
-(Upload markdown Mode image and Insert markdown Mode picture here)
+**Markdown Mode:**
+![Markdown Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/markdown_mode.png)
 
 Insert Mode:
 (Upload Insert Mode image and Insert Insert Mode picture here)
