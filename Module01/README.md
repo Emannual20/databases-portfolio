@@ -110,6 +110,10 @@ QUERY PLAN<br>
 In the initial prompt, the model decided that overnight implied 18:00:00 - 00:00:00, and made its own assumption. However, it gave a suggestion to change the timeframe to suit the 18:00:00 - 06:00:00 tiemframe as the real overnight definition. By running both commands, we can identofy the difference and catch the discrepancy of using the wrong prompt with poor boundaries set. <br>
 When trying to break the prompt, Claude managed to catch the error befoire running, such as correctly idenfitfying ts>%18% was not valid SQLite, and corrected itself before returning the commands to be used. <br>
 
+### Task 8: Publish your data with Datasette
+
+
+
 ## Task Inspirations
 
 - Inspiration 1
