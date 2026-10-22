@@ -112,6 +112,10 @@ When trying to break the prompt, Claude managed to catch the error befoire runni
 
 ### Task 8: Publish your data with Datasette
 
+25 rows where machine contains "cnc-01", spindle_load ≥ 60 and temp_c ≥ 46.5 sorted by machine
+![Exported Filtered Readings](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/Exported_filtered.png)
+
+Exported CSV File: [Filtered.csv](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/exported_filtered.csv)
 
 
 ## Task Inspirations
