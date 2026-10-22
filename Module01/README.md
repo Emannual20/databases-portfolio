@@ -117,6 +117,43 @@ When trying to break the prompt, Claude managed to catch the error befoire runni
 
 Exported CSV File: [Filtered.csv](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/exported_filtered.csv)
 
+### Task 9: sqlite3 shell power moves
+
+“Because telemetry.db already contained a populated readings table from earlier Python work, I ran the CSV import into a separate scratch.db so that CREATE TABLE wouldn’t fail or .import wouldn’t duplicate the 172,800 existing rows, which left my original database untouched for the later steps"
+
+Keeping SQL in a file, reduces having to manually type repeated commands, we can create a reusable file with the commands we will use and run the entire file instead, saving time.<br>
+
+Different output modes like .mode box or .mode json are simply different ways to present the data visually in the terminal.
+
+Box Mode:
+(Upload Box Mode image and Insert Box Mode picture here)
+
+Json Mode:
+(Upload json Mode image and Insert json Mode picture here)
+
+Markdown Mode:
+(Upload markdown Mode image and Insert markdown Mode picture here)
+
+Insert Mode:
+(Upload Insert Mode image and Insert Insert Mode picture here)
+<br>
+Interst Result.json file here for portfolio evidence
+<br>
+
+Size of Back Up File (Insert backup.db file here): 10280KB
+Size of Compact File (Insert compact.db file here): 10280KB
+
+Comparing file sizes between backup.db and compact.db, the file sizes are identical.
+
+**Claude Explanation:**
+.backup copies the database page for page and VACUUM INTO only removes unused free space, so because telemetry.db was loaded once and never had anything deleted, there was no wasted space to remove and both files came out the same size.
+
+Output from joining Tables:
+(Insert image of output from joining tables)
+
+**Suprising Command:**
+Surprisingly, VACUUM is a compaction tool that had nothing to compact: the database had never had a single row deleted, so it contained zero wasted space, and the “compacted” copy came out byte-for-byte the same size as the original.
+
 
 ## Task Inspirations
 
