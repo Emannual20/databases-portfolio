@@ -108,7 +108,7 @@ QUERY PLAN
 **Attempting to break Claude (Broken Prompt):**
 "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings ts > %18%, ordered by average load descending."<br>
 
-![Claude Response to Broken Prompt](<img width="901" height="709" alt="image" src="https://github.com/user-attachments/assets/ff746951-ffd7-4a1d-a5c7-fef406ac4e5c" />)
+![Claude Response to Broken Prompt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/broken_prompt_response.png)
 
 **Verification Paragraph:**
 In the initial prompt, the model decided that overnight implied 18:00:00 - 00:00:00, and made its own assumption. However, it gave a suggestion to change the timeframe to suit the 18:00:00 - 06:00:00 tiemframe as the real overnight definition. By running both commands, we can identofy the difference and catch the discrepancy of using the wrong prompt with poor boundaries set. <br>
