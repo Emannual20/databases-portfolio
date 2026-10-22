@@ -14,9 +14,21 @@ Logial Execution Order: <br>
 4) HAVING (Filers grouped/aggregated buckets)
 5) SELECT (Computes final expressions, evaluates functions and applies column aliases)
 6) DISTINCT  
-## Task ...
+## Task A
 
-This task was executed by myself.
+Our predictions: 
+
+SELECT * FROM maint_job WHERE technician = 'Beier';
+We predicted SCAN
+**Result:**  
+
+
+SELECT * FROM machine WHERE machine_name = 'cnc-02';
+We predicted SCAN
+
+SELECT * FROM maint_job WHERE technician LIKE '%ei%';
+We predicted SEARCH
+
 
 ## Task ...
 
