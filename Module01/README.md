@@ -176,6 +176,13 @@ temp_c >30 ✖
 ...
 ```
 
+### Task 11:
+
+Insert file for toolbox.md here
+
+Insert Screenshot here
+
+sqlite-utils took the fewest keystrokes: one insert command created the table, guessed the column types, and loaded all 172,800 rows, where the sqlite3 shell needed a CREATE TABLE plus .mode csv and .import, and Python needed a whole script. The Python loader was the clearest, because the schema, including the NOT NULL constraints that sqlite-utils left out, is written down explicitly, and the script can be rerun and kept in version control. I would use sqlite-utils for quickly exploring a CSV, the sqlite3 shell for one-off inspection and ad-hoc queries, and Python when the load is part of a repeatable pipeline that needs control over the schema or data cleaning.
 
 ## Task Inspirations
 

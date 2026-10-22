@@ -26,3 +26,8 @@ Json File: (Insert telemetry json file here) <br>
 {"database": "telemetry", "table": "readings", "is_view": false, "human_description_en": "", "rows": [[1, "2026-01-05 06:00:00", "cnc-01", 41.91, 1.186, 59.7], [2, "2026-01-05 06:00:00", "cnc-02", 42.42, 1.125, 54.3], [3, "2026-01-05 06:00:00", "cnc-03", 41.87, 1.209, 60.7], [4, "2026-01-05 06:00:03", "cnc-01", 42.7, 1.241, 64.2], [5, "2026-01-05 06:00:03", "cnc-02", 42.15, 1.309, 60.2]], "truncated": false, "filtered_table_rows_count": 172800, "expanded_columns": [], "expandable_columns": [], "columns": ["rowid", "ts", "machine", "temp_c", "vib_rms", "spindle_load"], "primary_keys": [], "units": {}, "query": {"sql": "select rowid, ts, machine, temp_c, vib_rms, spindle_load from readings order by rowid limit 6", "params": {}}, "facet_results": {}, "suggested_facets": [{"name": "ts", "type": "date", "toggle_url": "http://127.0.0.1:8001/telemetry/readings.json?_size=5&_facet_date=ts"}], "next": "5", "next_url": "http://127.0.0.1:8001/telemetry/readings.json?_size=5&_next=5", "private": false, "allow_execute_sql": true, "query_ms": 668.4970000005706}
 
 
+Initally uploading by URL did not work as the box was reading the file as the wrong type. Replaced the link with:
+```
+https://lite.datasette.io/?url=https://raw.githubusercontent.com/Emannual20/databases-portfolio/main/Module01/telemetry.db
+```
+
