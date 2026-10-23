@@ -2,11 +2,23 @@
 Spend about 30 minutes exploring the concepts above with your Task Pod and filling in module-02/study-log.md:
 
 The references you used — the source (book, site, video, doc) and, for each, the one concept you understood best from it. (This comes first: credit where your understanding came from.)
+
+Reference Links:
+
+
 Things you googled — the term/question, what you found, and the source (URL). One line each.
+
+Googled Questions:
+
 Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
+
+
+
 LLM Q&A — for each prompt you tried: the prompt, a 2–3 line summary of the answer, and how you verified it (and where it was wrong).
-Your two best found ER sketches — hunt down ER/EER example sketches that teach you the most, then compile down to the best two (this is a small sport — the clearest examples win the Discord share in Task C). For each: the source (link or credit), a screenshot or your own redraw, and what exactly you learned from it that the others did not show.
-Portfolio evidence: module-02/study-log.md.
+
+
+Your two best found ER sketches — hunt down ER/EER example sketches that teach you the most, then compile down to the best two (this is a small sport — the clearest examples win the Discord share in Task C).
+
 
 ★ Task B: From words to sketch (part of your study)
 Working from a plain-text description to a diagram is the core skill. For each description below, decide the entities, their attributes, and the relationships with cardinality, then sketch it — hand-drawn, or in Mermaid or diagrams.net.
