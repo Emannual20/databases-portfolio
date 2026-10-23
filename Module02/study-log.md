@@ -5,8 +5,29 @@ The references you used — the source (book, site, video, doc) and, for each, t
 
 Reference Links:
 
+From this source, I understood he definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer)
+
+Entity Relationship Model: https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+
+
+
+Cardinality: https://en.wikipedia.org/wiki/Cardinality_(data_modeling)
+
+EER: https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model
+
+Surrogate Key: https://en.wikipedia.org/wiki/Surrogate_key
+
 
 Things you googled — the term/question, what you found, and the source (URL). One line each.
+
+**Google Searches:**<br>
+_"What is a junction table in DataBases?"_
+A junction table, also known as an associative entity or bridge table, is a database table used to resolve a many-to-many relationship between two other tables. It works by storing the primary keys of the associated tables as foreign keys, effectively creating two separate one-to-many relationships that link the respective records together.<br>
+Source URL: https://en.wikipedia.org/wiki/Associative_entity<br>
+
+_"What is a surrogate key and its purpose?"_<br>
+A surrogate key is an artificially generated, unique identifier added to a database table to act as the primary key. Its primary purpose is to provide a stable, system-managed key that is independent of any business logic, ensuring reliable relationships between tables even if the underlying business data changes.<br>
+Source URL: https://en.wikipedia.org/wiki/Surrogate_key<br>
 
 Googled Questions:
 
