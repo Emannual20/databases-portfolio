@@ -48,6 +48,8 @@ Working from a plain-text description to a diagram is the core skill. For each d
 
 [1:1](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
 
+![1:1](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1to1%20A%20Workshop%20Keeps%20machines.drawio.svg)
+
 1:n — Each machine carries many sensors; every sensor is installed on exactly one machine. → Which side holds the foreign key?
 
 [1:n](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
