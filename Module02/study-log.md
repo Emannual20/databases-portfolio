@@ -1,16 +1,16 @@
-★ Task A: Study in your pod (~30 minutes)
+**Task A: Study in your pod**
 
 **Reference Links:**
 
-From this source, I understood he definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer)
+From this source, I understood he definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer) <br>
 
-Entity Relationship Model: https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+Entity Relationship Model: [Wiki Entity Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)<br>
 
-Cardinality: https://en.wikipedia.org/wiki/Cardinality_(data_modeling)
+Cardinality: https://en.wikipedia.org/wiki/Cardinality_(data_modeling)<br>
 
-EER: https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model
+EER: https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model<br>
 
-Surrogate Key: https://en.wikipedia.org/wiki/Surrogate_key
+Surrogate Key: https://en.wikipedia.org/wiki/Surrogate_key<br>
 
 
 Things you googled — the term/question, what you found, and the source (URL). One line each.
