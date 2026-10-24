@@ -14,7 +14,7 @@ Expectations: I expect to learn about databases, MYSQL, possibly docker if there
 
 ### Task 2:
 My partners:
-- Sanjay, [portfolio link](https://github.com/yajnas-crpto)
+- Sanjay, [portfolio link](https://github.com/yajnas-crpto/databases_portfolio_sanjay)
 - Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
 
@@ -141,7 +141,7 @@ Different output modes like .mode box or .mode json are simply different ways to
 **Insert Mode:**<br>
 ![Intert Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/insert_mode.png)
 
-Interst Result.json file here for portfolio evidence: [result.json](
+Result.json file here: [result.json](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/result.json)
 <br>
 
 Size of Back Up File (Insert backup.db file here): 10280KB
