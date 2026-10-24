@@ -46,7 +46,7 @@ All diagrams were self-made in draw.io, with help from Geeks for Geeks<br>
 
 ![1:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1ton%20diagram.drawio.svg)
 
-m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → We need a junction table, and it holds foreign keys?
+m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → We need a junction table, and it holds foreign keys.
 
 ![m:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/many%20to%20many.drawio.svg)
 
