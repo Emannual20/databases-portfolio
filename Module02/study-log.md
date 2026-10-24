@@ -6,14 +6,11 @@ From this source, I understood he definition of entities, attributes and relatio
 
 Entity Relationship Model: [Wiki Entity Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)<br>
 
-Cardinality: https://en.wikipedia.org/wiki/Cardinality_(data_modeling)<br>
+Cardinality: [Wiki Cardinality](https://en.wikipedia.org/wiki/Cardinality_(data_modeling))<br>
 
-EER: https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model<br>
+EER: [Wiki Enhanced Entity Relationship](https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model)<br>
 
-Surrogate Key: https://en.wikipedia.org/wiki/Surrogate_key<br>
-
-
-Things you googled — the term/question, what you found, and the source (URL). One line each.
+Surrogate Key: [Wiki Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)<br>
 
 **Google Searches:**<br>
 _"What is a junction table in DataBases?"_
