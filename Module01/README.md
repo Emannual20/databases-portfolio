@@ -22,7 +22,7 @@ My partners:
 > **Difficulties Faced :**
 > 1. Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.<br>
 > **Solution:** Using gemini for help, I managed to clone it via the terminal, since that is the main tool that will be used for future lectures. Understanding how to utilize the command prompt on windows will be useful for the future modules to come as we will mainly be working on there.
-> 2. Could not find the instructors GitHub Username, team member Sanjay had to help me with locating the usename and adding the professor as a collaborator.<br>
+> 2. Could not find the instructors GitHub Username, team member **Sanjay** had to help me with locating the usename and adding the professor as a collaborator.<br>
 > **Solution :** No shame in asking for help!
 
 UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
@@ -40,7 +40,7 @@ I found the .help command the most helpful as it showed me all the commands i ne
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
 
 ### Task 5: 
-SQL game progress and reflectioncan be found here: [sql-island.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/sql-island.md)
+SQL game progress and reflection can be found here: [sql-island.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/sql-island.md)
 
 ### Task 6:
 Generator Script: [generate_telemetry.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
@@ -55,7 +55,7 @@ Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](h
 **Output result of prompt :** 
 ![Response](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/Claude_Prompt_Response.png)
 
-> Notes:
+> Notes:<br>
 > The intial prompt made the model believe the Query would only last from 18::00 to 00:00, it did not consider for the fact that overnight meant 18:00 - 06:00
 
 **Executing in Terminal:** 
@@ -111,7 +111,7 @@ QUERY PLAN
 ![Claude Response to Broken Prompt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/broken_prompt_response.png)
 
 **Verification Paragraph:**
-In the initial prompt, the model decided that overnight implied 18:00:00 - 00:00:00, and made its own assumption. However, it gave a suggestion to change the timeframe to suit the 18:00:00 - 06:00:00 tiemframe as the real overnight definition. By running both commands, we can identofy the difference and catch the discrepancy of using the wrong prompt with poor boundaries set. <br>
+In the initial prompt, the model decided that overnight implied 18:00:00 - 00:00:00, and made its own assumption. However, it gave a suggestion to change the timeframe to suit the 18:00:00 - 06:00:00 timeframe as the real overnight definition. By running both commands, we can identify the difference and catch the discrepancy of using the wrong prompt with poor boundaries set. <br>
 When trying to break the prompt, Claude managed to catch the error befoire running, such as correctly idenfitfying ts>%18% was not valid SQLite, and corrected itself before returning the commands to be used. <br>
 
 ### Task 8: Publish your data with Datasette
@@ -123,11 +123,11 @@ Exported CSV File: [Filtered.csv](https://github.com/Emannual20/databases-portfo
 
 ### Task 9: sqlite3 shell power moves
 
-“Because telemetry.db already contained a populated readings table from earlier Python work, I ran the CSV import into a separate scratch.db so that CREATE TABLE wouldn’t fail or .import wouldn’t duplicate the 172,800 existing rows, which left my original database untouched for the later steps"
+“Because telemetry.db already contained a populated readings table from earlier Python work, I ran the CSV import into a separate scratch.db so that CREATE TABLE wouldn’t fail or .import wouldn’t duplicate the 172,800 existing rows, which left my original database untouched for the later steps"<br>
 
 Keeping SQL in a file, reduces having to manually type repeated commands, we can create a reusable file with the commands we will use and run the entire file instead, saving time.<br>
 
-Different output modes like .mode box or .mode json are simply different ways to present the data visually in the terminal.
+Different output modes like .mode box or .mode json are simply different ways to present the data visually in the terminal.<br>
 
 **Box Mode:**<br>
 ![Box Mode](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/box_mode.png)
@@ -144,8 +144,8 @@ Different output modes like .mode box or .mode json are simply different ways to
 Result.json file here: [result.json](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/result.json)
 <br>
 
-Size of Back Up File (Insert backup.db file here): 10280KB
-Size of Compact File (Insert compact.db file here): 10280KB
+Size of Back Up File: 10280KB
+Size of Compact File: 10280KB
 
 Comparing file sizes between backup.db and compact.db, the file sizes are identical.
 
