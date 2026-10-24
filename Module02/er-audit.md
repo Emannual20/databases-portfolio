@@ -27,34 +27,6 @@
 * **Intended Composite Primary Key:** `(job_id, part_no)`
   * *Audit Notes:* Currently represented as a comma-separated string in `maint_job.parts_used` (e.g., `'P-1001,P-1002'`), violating First Normal Form (1NF). Must be unnested into a proper $m:n$ junction table.
 # Task 5: Mermaid ER Diagram Lab
-# Task 1: Reconstruct the ER Model
-
-## 1. Entities, Attributes, and Intended Primary Keys
-
-### Machine
-- **Attributes:** machine_name, serial_no, site, installed
-- **Intended primary key:** machine_name
-- Each machine should have a unique name and serial number.
-
-### Part
-- **Attributes:** part_no, description, unit_price
-- **Intended primary key:** part_no
-- Each part should have a unique part number.
-
-### MaintenanceJob
-- **Attributes:** job_id, machine_name, technician, done_on, parts_used
-- **Intended primary key:** job_id
-- Each maintenance job should have a unique ID and refer to one machine and one technician.
-
-### Technician
-- **Attributes:** technician_name
-- **Intended primary key:** technician_name
-- A technician can perform many maintenance jobs.
-
-### JobPart (associative entity)
-- **Attributes:** job_id, part_no
-- **Intended composite primary key:** (job_id, part_no)
-- This entity connects maintenance jobs and parts because one job can use multiple parts and one part can be used in multiple jobs.
 
 ## 2. Reconstructed ER Diagram
 
