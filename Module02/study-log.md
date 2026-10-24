@@ -1,4 +1,4 @@
-**Task A: Study in your pod**
+## Task A: Study in your pod
 
 **Reference Links:**
 
@@ -15,13 +15,17 @@ Surrogate Key: [Wiki Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)
 **Google Searches:**<br>
 _"What is a junction table in DataBases?"_
 A junction table, also known as an associative entity or bridge table, is a database table used to resolve a many-to-many relationship between two other tables. It works by storing the primary keys of the associated tables as foreign keys, effectively creating two separate one-to-many relationships that link the respective records together.<br>
-Source URL: https://en.wikipedia.org/wiki/Associative_entity<br>
+Source URL: [Wiki Associative Entity](https://en.wikipedia.org/wiki/Associative_entity)<br>
 
 _"What is a surrogate key and its purpose?"_<br>
 A surrogate key is an artificially generated, unique identifier added to a database table to act as the primary key. Its primary purpose is to provide a stable, system-managed key that is independent of any business logic, ensuring reliable relationships between tables even if the underlying business data changes.<br>
-Source URL: https://en.wikipedia.org/wiki/Surrogate_key<br>
+Source URL: [Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)<br>
 
 Googled Questions:
+
+"How do you draw an Entity Relationship Diagram in SQL": 
+https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/
+
 
 Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
 
@@ -31,9 +35,8 @@ LLM Q&A — for each prompt you tried: the prompt, a 2–3 line summary of the a
 
 Your two best found ER sketches — hunt down ER/EER example sketches that teach you the most, then compile down to the best two:
 
-
-**Task B: From words to sketch**
-All diagrams were self-made in draw.io
+## Task B: From words to sketch
+All diagrams were self-made in draw.io, with help from Geeks for Geeks<br>
 
 1:1 — A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Where does the key go? Is the nameplate a separate entity or an attribute of the machine?
 
@@ -43,9 +46,9 @@ All diagrams were self-made in draw.io
 
 ![1:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1ton%20diagram.drawio.svg)
 
-m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → What extra table do you need, and what is its key?
+m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → We need a junction table, and it holds foreign keys?
 
-[1:1](Module02/pictures/Machine-Nameplate-Relationship-Model.png)
+![m:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/many%20to%20many.drawio.svg)
 
 Entity vs. attribute vs. relationship — A maintenance job happens on one machine, is done by one technician on one date; a technician performs many jobs. → Is the job a relationship or an entity? Is the technician an entity or just a name?
 
@@ -85,12 +88,22 @@ GROUP BY m.machine_id, m.location;
 
 Portfolio evidence: your four sketches in module-02/study-log.md (or er-examples.md) plus the one CREATE TABLE + COUNT proof.
 
-★ Task C: Explain & share with another pod (~15 minutes)
-Pair with a neighbouring pod for about 15 minutes:
+**Task C: Explain & share with another pod**
 
-Explain to each other — each pod walks the other through its study log and its four sketches; ask questions and fill each other's gaps.
-Agree on the 3–5 most noteworthy points and the learning you jointly stand behind (e.g. "a natural key without UNIQUE is not a key").
-Clean up your documentation — update your study-log.md with what you learned from the other pod.
-Agree on one image — the best example from either pod, or a new drawing the two pods make together — and post that one in our Discord channel, with a one-sentence note on why you chose it.
-Each member adds a short “Agreed learning (pod discussion)” section — the shared points, plus any disagreement you left open — to their own module-02/study-log.md.
-Portfolio evidence: your cleaned-up study-log.md (with the “Agreed learning (pod discussion)” section), and your pod-pair's single shared image posted in Discord.
+### Post-Pod Key Takeaways
+
+**SQLite's Silent Danger**
+
+I was reminded today of just how dangerous SQLite’s default behavior can be. Leaving foreign keys turned off by default is a massive trap, especially when working with legacy schemas. If you aren't explicitly enforcing them at the connection level, orphan rows are bound to creep in—like assigning critical maintenance jobs to ghost machines without the system ever batting an eye.
+
+**The 1NF Comma Trap**
+
+Storing lists of parts as comma-separated strings inside a single field is a habit that completely wrecks relational design. It makes clean `JOIN` operations impossible and leads to silent data loss the moment you try to query for individual part usage. Using proper junction tables isn't just best practice—it's non-negotiable.
+
+**Natural Keys vs. Reality**
+
+Relying on natural keys like part numbers or names as primary keys sounds good in theory, but it creates huge vulnerabilities in practice. If a supplier updates their part numbering format or someone changes their name, that change cascades across the entire database. I’m definitely leaning toward surrogate keys (`INTEGER PRIMARY KEY`) for internal references to keep structural integrity isolated from real-world changes.
+
+**Drawing the Entity vs. Attribute Line**
+
+A great rule of thumb that came out of our discussion: deciding whether something is an attribute or an entity usually comes down to its lifecycle. If a component—like a motor or a sensor—can be unbolted from one machine and installed on another, it has its own independent life and needs to be its own entity. If it’s permanently tied to the machine and gets scrapped with it, it’s just an attribute.
