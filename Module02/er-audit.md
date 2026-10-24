@@ -1,4 +1,3 @@
-cat <<'EOF' > module-02/er-audit.md
 # Entity & Data Quality Audit: legacy.db
 
 ## Identified Entities & Intended Keys
