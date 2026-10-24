@@ -1,15 +1,10 @@
 ★ Task A: Study in your pod (~30 minutes)
-Spend about 30 minutes exploring the concepts above with your Task Pod and filling in module-02/study-log.md:
 
-The references you used — the source (book, site, video, doc) and, for each, the one concept you understood best from it. (This comes first: credit where your understanding came from.)
-
-Reference Links:
+**Reference Links:**
 
 From this source, I understood he definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer)
 
 Entity Relationship Model: https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
-
-
 
 Cardinality: https://en.wikipedia.org/wiki/Cardinality_(data_modeling)
 
@@ -34,15 +29,14 @@ Googled Questions:
 Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
 
 
-
 LLM Q&A — for each prompt you tried: the prompt, a 2–3 line summary of the answer, and how you verified it (and where it was wrong).
 
 
-Your two best found ER sketches — hunt down ER/EER example sketches that teach you the most, then compile down to the best two (this is a small sport — the clearest examples win the Discord share in Task C).
+Your two best found ER sketches — hunt down ER/EER example sketches that teach you the most, then compile down to the best two:
 
 
-★ Task B: From words to sketch (part of your study)
-Working from a plain-text description to a diagram is the core skill. For each description below, decide the entities, their attributes, and the relationships with cardinality, then sketch it — hand-drawn, or in Mermaid or diagrams.net.
+**Task B: From words to sketch**
+All diagrams were self-made in draw.io
 
 1:1 — A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Where does the key go? Is the nameplate a separate entity or an attribute of the machine?
 
