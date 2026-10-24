@@ -35,11 +35,11 @@ Your two best found ER sketches — hunt down ER/EER example sketches that teach
 **Task B: From words to sketch**
 All diagrams were self-made in draw.io
 
-1:1 — A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Where does the key go? Is the nameplate a separate entity or an attribute of the machine?
+1:1 — A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Key goes to the many side, and the nameplate is its own entity.
 
 ![1:1](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1to1%20A%20Workshop%20Keeps%20machines.drawio.svg)
 
-1:n — Each machine carries many sensors; every sensor is installed on exactly one machine. → Which side holds the foreign key?
+1:n — Each machine carries many sensors; every sensor is installed on exactly one machine. → The many side holds the foreign key.
 
 ![1:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1ton%20diagram.drawio.svg)
 
