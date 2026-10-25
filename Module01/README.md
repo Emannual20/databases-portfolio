@@ -28,22 +28,19 @@ I loaded the same CSV three ways: a Python loader using `?` placeholders for bou
 **6. Verify before you trust an LLM query**
 In Task 7, the model assumed "overnight" meant 18:00 to midnight, and running both versions showed different averages. Adding `OR time(ts) < '06:00:00'` fixed the definition. I also checked the query plan with `EXPLAIN QUERY PLAN`, and I tried to break the prompt on purpose, which showed me that the model catches invalid SQL but not vague wording. (Task 7)
 
-### Task 1: [My portfolio](https://github.com/Emannual20/databases-portfolio)
+## Task Personal Profile
 My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge<br>
 Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
+### Task 1: [My portfolio](https://github.com/Emannual20/databases-portfolio)
+
 ### Task 2:
 My partners:
-- Sanjay, [portfolio link](https://github.com/yajnas-crpto/databases_portfolio_sanjay)
-- Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
-- Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
+- Sanjay, [Sanjay portfolio link](https://github.com/yajnas-crpto/databases_portfolio_sanjay)
+- Jo Marie, [Jo Marie portfolio link](https://github.com/jmanuel08/database-jomportfolio)
+- Myomin Lin, [Myomin Lin portfolio link](https://github.com/mmlin801597/database-portfolio)
 
 ### Task 3:
-> **Difficulties Faced :**
-> 1. Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.<br>
-> **Solution:** Using gemini for help, I managed to clone it via the terminal, since that is the main tool that will be used for future lectures. Understanding how to utilize the command prompt on windows will be useful for the future modules to come as we will mainly be working on there.
-> 2. Could not find the instructors GitHub Username, team member **Sanjay** had to help me with locating the usename and adding the professor as a collaborator.<br>
-> **Solution :** No shame in asking for help!
 
 UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
 Committed PyProject: [Pyproject.toml](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)<br>

@@ -26,6 +26,12 @@ The topics were interesting, and learning and brainstorming as a team felt more 
 
 We struggled a little as a team, as my team member Sanjay had never used Git before. We had to assist in their set up, but once we became familiar with the web page it was easier to navigate and find the resources we needed.
 
+> **Difficulties Faced :**
+> 1. Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.<br>
+> **Solution:** Using gemini for help, I managed to clone it via the terminal, since that is the main tool that will be used for future lectures. Understanding how to utilize the command prompt on windows will be useful for the future modules to come as we will mainly be working on there.
+> 2. Could not find the instructors GitHub Username, team member **Sanjay** had to help me with locating the usename and adding the professor as a collaborator.<br>
+> **Solution :** No shame in asking for help!
+
 **Was there any good/fun “struggling”/exploration?**  
 > Any show stoppers – anything where you should reach out to peers or instructors?
 

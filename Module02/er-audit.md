@@ -152,4 +152,10 @@ Python File: [contract.py](https://github.com/Emannual20/databases-portfolio/blo
 
 Emitted DDL File: [emitted-ddel.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/emitted-ddl.sql)
 
+Field Validator is the Pydantic checker in the Python code that checks if the Srrial Number begins with SN_ and for SQLite enforces rules such as nullable=False (NOT NULL) jects the row if that column is empty. Other rules and explanations:<br>
+UniqueConstraint("serial_no")	Looks through existing values and rejects a repeat <br>
+primary_key=True	Same as unique, and the value must also be present <br>
+Composite key on job_part	Rejects a second row with the same job and part pair <br>
+ForeignKey(...)	Looks up the referenced table and rejects the row if the target doesn’t exist (only if switched on, see below) <br>
 
+## Task 4: Model inheritance and prove it
