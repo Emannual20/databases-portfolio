@@ -195,3 +195,54 @@ Composite key on job_part	Rejects a second row with the same job and part pair <
 ForeignKey(...)	Looks up the referenced table and rejects the row if the target doesn’t exist (only if switched on, see below) <br>
 
 ## Task 4: Model inheritance and prove it
+
+Assumptions: A machine is a CNC mill or an injection molder, never both (disjoint).
+**Attributes (from contract.py):** machine_id, serial_no, site, installed
+**Extra attributes:**
+**CNC mill:** spindle_rpm_max, axes<br>
+**Injection molder:** shot_volume_cm3, drive_type (hydraulic / electric / hybrid)<br>
+
+Design A: one table with a discriminator column
+```
+CREATE TABLE machine (
+  machine_id      INTEGER PRIMARY KEY,
+  serial_no       TEXT NOT NULL UNIQUE,
+  site            TEXT NOT NULL,
+  installed       TEXT NOT NULL,
+  machine_type    TEXT NOT NULL CHECK (machine_type IN ('cnc_mill','injection_molder')),
+  spindle_rpm_max INTEGER,
+  axes            INTEGER,
+  shot_volume_cm3 INTEGER,
+  drive_type      TEXT CHECK (drive_type IN ('hydraulic','electric','hybrid')),
+  CHECK (
+    (machine_type = 'cnc_mill'
+       AND spindle_rpm_max IS NOT NULL AND axes IS NOT NULL
+       AND shot_volume_cm3 IS NULL AND drive_type IS NULL)
+    OR
+    (machine_type = 'injection_molder'
+       AND shot_volume_cm3 IS NOT NULL AND drive_type IS NOT NULL
+       AND spindle_rpm_max IS NULL AND axes IS NULL)
+  )
+);
+```
+
+machine_type is the discriminator. The subtype columns must allow NULL, because a mill row has no clamp or shot data. The table-level CHECK brings the strictness back: a mill must fill its own columns and leave the molder's empty, and the other way round.
+
+Design B: separate tables
+```
+CREATE TABLE cnc_mill (
+  machine_id      INTEGER PRIMARY KEY REFERENCES machine(machine_id),
+  spindle_rpm_max INTEGER NOT NULL,
+  axes            INTEGER NOT NULL
+);
+
+CREATE TABLE injection_molder (
+  machine_id      INTEGER PRIMARY KEY REFERENCES machine(machine_id),
+  shot_volume_cm3 INTEGER NOT NULL,
+  drive_type      TEXT NOT NULL CHECK (drive_type IN ('hydraulic','electric','hybrid'))
+);
+```
+Each subtype table's primary key is also a foreign key to machine, which is how "a mill is a machine" is written in tables. Subtype columns can be NOT NULL, and nothing sits empty.
+
+**Decision:** I would ship Design A
+**Rationale:** I would ship Design A because with only two extra columns per type, one table with a discriminator and a CHECK is the simplest schema that still makes a machine impossible to be both types, and it needs no joins.
