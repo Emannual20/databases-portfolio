@@ -248,7 +248,7 @@ Each subtype table's primary key is also a foreign key to machine, which is how 
 ## Task 5 (Stretcher): Mermaid ER diagrams — collect, convert, and critique
 
 1. **Good Example:** Good:library loans <br>
-
+```mermid
 erDiagram
   BOOK ||--o{ COPY : "has physical"
   MEMBER ||--o{ LOAN : makes
@@ -275,6 +275,7 @@ erDiagram
     date borrowed_on
     date returned_on
   }
+```
 
 What makes it good: a book and a physical copy are separate entities, because a library owns many copies of one title. LOAN is an associative entity that holds facts about the pairing (the dates). Every line has a meaningful verb, and the keys are visible.
 
