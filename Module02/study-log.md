@@ -244,3 +244,6 @@ Each subtype table's primary key is also a foreign key to machine, which is how 
 
 **Decision:** I would ship Design A<br>
 **Rationale:** I would ship Design A because with only two extra columns per type, one table with a discriminator and a CHECK is the simplest schema that still makes a machine impossible to be both types, and it needs no joins.
+
+## Task 5 (Stretcher): Mermaid ER diagrams — collect, convert, and critique
+
