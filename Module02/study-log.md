@@ -247,3 +247,91 @@ Each subtype table's primary key is also a foreign key to machine, which is how 
 
 ## Task 5 (Stretcher): Mermaid ER diagrams — collect, convert, and critique
 
+1. **Good Example:** Good:library loans <br>
+
+erDiagram
+  BOOK ||--o{ COPY : "has physical"
+  MEMBER ||--o{ LOAN : makes
+  COPY ||--o{ LOAN : "is borrowed in"
+
+  BOOK {
+    int book_id PK
+    string title
+    string isbn
+  }
+  COPY {
+    int copy_id PK
+    int book_id FK
+    string shelf_code
+  }
+  MEMBER {
+    int member_id PK
+    string name
+  }
+  LOAN {
+    int loan_id PK
+    int member_id FK
+    int copy_id FK
+    date borrowed_on
+    date returned_on
+  }
+
+What makes it good: a book and a physical copy are separate entities, because a library owns many copies of one title. LOAN is an associative entity that holds facts about the pairing (the dates). Every line has a meaningful verb, and the keys are visible.
+
+2. **Strange Example:** a ternary relationship<br>
+
+erDiagram
+  SUPPLIER ||--o{ SUPPLY : provides
+  PART ||--o{ SUPPLY : "is supplied in"
+  PROJECT ||--o{ SUPPLY : "receives"
+
+  SUPPLIER {
+    int supplier_id PK
+    string name
+  }
+  PART {
+    int part_id PK
+    string description
+  }
+  PROJECT {
+    int project_id PK
+    string name
+  }
+  SUPPLY {
+    int supplier_id PK, FK
+    int part_id PK, FK
+    int project_id PK, FK
+    int quantity
+  }
+
+What makes it strange: the fact being recorded (“supplier S supplies part P to project J”) involves three entities at once, which a plain line between two boxes can’t draw. Mermaid has no three-way symbol, so the relationship becomes its own table with three foreign keys that together form the key. The point to make: splitting it into three separate two-way relationships would lose information, since “S supplies P” and “S supplies to J” don’t tell you that S supplies P to J. <br>
+
+3. **Wrong or COnfusing Example:** an m:n drawn directly
+
+erDiagram
+  STUDENT }o--o{ COURSE : has
+
+  STUDENT {
+    int student_id PK
+    string name
+    string course_ids "e.g. 'C1,C2,C5'"
+    float grade
+  }
+  COURSE {
+    int course_id PK
+    string title
+  }
+
+erDiagram
+  STUDENT }o--o{ COURSE : has
+
+  STUDENT {
+    int student_id PK
+    string name
+    string course_ids "e.g. 'C1,C2,C5'"
+    float grade
+  }
+  COURSE {
+    int course_id PK
+    string title
+  }
