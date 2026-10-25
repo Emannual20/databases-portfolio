@@ -202,7 +202,7 @@ Assumptions: A machine is a CNC mill or an injection molder, never both (disjoin
 **CNC mill:** spindle_rpm_max, axes<br>
 **Injection molder:** shot_volume_cm3, drive_type (hydraulic / electric / hybrid)<br>
 
-Design A: one table with a discriminator column
+**Design A: one table with a discriminator column**
 ```
 CREATE TABLE machine (
   machine_id      INTEGER PRIMARY KEY,
@@ -225,10 +225,8 @@ CREATE TABLE machine (
   )
 );
 ```
-
-machine_type is the discriminator. The subtype columns must allow NULL, because a mill row has no clamp or shot data. The table-level CHECK brings the strictness back: a mill must fill its own columns and leave the molder's empty, and the other way round.
-
-Design B: separate tables
+machine_type is the discriminator. The subtype columns must allow NULL, because a mill row has no clamp or shot data. The table-level CHECK brings the strictness back: a mill must fill its own columns and leave the molder's empty, and the other way round.<br>
+**Design B: separate tables**
 ```
 CREATE TABLE cnc_mill (
   machine_id      INTEGER PRIMARY KEY REFERENCES machine(machine_id),
@@ -244,5 +242,5 @@ CREATE TABLE injection_molder (
 ```
 Each subtype table's primary key is also a foreign key to machine, which is how "a mill is a machine" is written in tables. Subtype columns can be NOT NULL, and nothing sits empty.
 
-**Decision:** I would ship Design A
+**Decision:** I would ship Design A<br>
 **Rationale:** I would ship Design A because with only two extra columns per type, one table with a discriminator and a CHECK is the simplest schema that still makes a machine impossible to be both types, and it needs no joins.
