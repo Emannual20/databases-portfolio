@@ -23,8 +23,7 @@ Source URL: [Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)<br>
 
 Googled Questions:
 
-"How do you draw an Entity Relationship Diagram in SQL": 
-https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/
+"How do you draw an Entity Relationship Diagram in SQL": [How to Drw ER Digrms)https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/
 
 
 Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
