@@ -323,18 +323,4 @@ erDiagram
     int course_id PK
     string title
   }
-
-erDiagram
-  STUDENT }o--o{ COURSE : has
-
-  STUDENT {
-    int student_id PK
-    string name
-    string course_ids "e.g. 'C1,C2,C5'"
-    float grade
-  }
-  COURSE {
-    int course_id PK
-    string title
-  }
 ```
