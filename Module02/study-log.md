@@ -248,7 +248,7 @@ Each subtype table's primary key is also a foreign key to machine, which is how 
 ## Task 5 (Stretcher): Mermaid ER diagrams — collect, convert, and critique
 
 1. **Good Example:** Good:library loans <br>
-```mermid
+```mermaid
 erDiagram
   BOOK ||--o{ COPY : "has physical"
   MEMBER ||--o{ LOAN : makes
