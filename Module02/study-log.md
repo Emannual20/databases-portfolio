@@ -280,7 +280,7 @@ erDiagram
 What makes it good: a book and a physical copy are separate entities, because a library owns many copies of one title. LOAN is an associative entity that holds facts about the pairing (the dates). Every line has a meaningful verb, and the keys are visible.
 
 2. **Strange Example:** a ternary relationship<br>
-
+```mermaid
 erDiagram
   SUPPLIER ||--o{ SUPPLY : provides
   PART ||--o{ SUPPLY : "is supplied in"
@@ -304,11 +304,12 @@ erDiagram
     int project_id PK, FK
     int quantity
   }
+```
 
 What makes it strange: the fact being recorded (“supplier S supplies part P to project J”) involves three entities at once, which a plain line between two boxes can’t draw. Mermaid has no three-way symbol, so the relationship becomes its own table with three foreign keys that together form the key. The point to make: splitting it into three separate two-way relationships would lose information, since “S supplies P” and “S supplies to J” don’t tell you that S supplies P to J. <br>
 
 3. **Wrong or COnfusing Example:** an m:n drawn directly
-
+```mermaid
 erDiagram
   STUDENT }o--o{ COURSE : has
 
@@ -336,3 +337,4 @@ erDiagram
     int course_id PK
     string title
   }
+```
