@@ -2,7 +2,7 @@
 
 **Reference Links:**
 
-From this source, I understood he definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer) <br>
+From this source, I understood the definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer) <br>
 
 Entity Relationship Model: [Wiki Entity Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)<br>
 
@@ -23,8 +23,7 @@ Source URL: [Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)<br>
 
 Googled Questions:
 
-"How do you draw an Entity Relationship Diagram in SQL": 
-https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/
+"How do you draw an Entity Relationship Diagram in SQL": [How to Drw ER Digrms)https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/
 
 
 Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
@@ -54,7 +53,8 @@ Entity vs. attribute vs. relationship — A maintenance job happens on one machi
 
 Then prove one: write the CREATE TABLE for your favourite sketch, insert two rows, and show the COUNT query that demonstrates its cardinality.
 
--- Step 1: CREATE TABLES
+-- Step 1: CREATE TABLES<br>
+```
 CREATE TABLE machines (
     machine_id INT PRIMARY KEY,
     location VARCHAR(100) NOT NULL
@@ -66,8 +66,9 @@ CREATE TABLE sensors (
     machine_id INT NOT NULL,
     FOREIGN KEY (machine_id) REFERENCES machines(machine_id)
 );
-
--- Step 2: INSERT DATA (1 Machine, 2 Sensors referencing that Machine)
+```
+-- Step 2: INSERT DATA (1 Machine, 2 Sensors referencing that Machine)<br>
+```
 INSERT INTO machines (machine_id, location) 
 VALUES (101, 'Assembly Line A');
 
@@ -75,8 +76,9 @@ INSERT INTO sensors (sensor_id, sensor_type, machine_id)
 VALUES 
     (1, 'Vibration', 101),
     (2, 'Temperature', 101);
-
+```
 -- Step 3: COUNT QUERY TO PROVE CARDINALITY (1:n)
+```
 SELECT 
     m.machine_id,
     m.location,
@@ -85,8 +87,7 @@ FROM machines m
 LEFT JOIN sensors s ON m.machine_id = s.machine_id
 WHERE m.machine_id = 101
 GROUP BY m.machine_id, m.location;
-
-Portfolio evidence: your four sketches in module-02/study-log.md (or er-examples.md) plus the one CREATE TABLE + COUNT proof.
+```
 
 **Task C: Explain & share with another pod**
 
@@ -94,7 +95,7 @@ Portfolio evidence: your four sketches in module-02/study-log.md (or er-examples
 
 **SQLite's Silent Danger**
 
-I was reminded today of just how dangerous SQLite’s default behavior can be. Leaving foreign keys turned off by default is a massive trap, especially when working with legacy schemas. If you aren't explicitly enforcing them at the connection level, orphan rows are bound to creep in—like assigning critical maintenance jobs to ghost machines without the system ever batting an eye.
+I was reminded today of just how dangerous SQLite’s default behavior can be. Leaving foreign keys turned off by default is a massive trap, especially when working with legacy schemas. If you aren't explicitly enforcing them at the connection level, orphan rows are bound to creep in—like assigning critical maintenance jobs to ghost machines without the system ever realising.
 
 **The 1NF Comma Trap**
 
