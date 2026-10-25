@@ -146,5 +146,10 @@ JOIN part p ON p.part_no = j.parts_used;   -- the list is not a key
 ```
 parts_used holds a comma-separated list, so joining on it matches only single-part jobs: job 1 ('P-1001,P-1002') silently vanishes from parts reports, and job 2 is double-counted because P-1003 is duplicated, so parts usage and cost come out wrong while the query still reports success.
 
-## Task 3: Write the data contract in code
+### Task 3: Write the data contract in code
+
+Python File: [contract.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/contract.py)
+
+Emitted DDL File: [emitted-ddel.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/emitted-ddl.sql)
+
 

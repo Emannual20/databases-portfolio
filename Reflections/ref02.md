@@ -26,6 +26,17 @@ The topics were interesting, and learning and brainstorming as a team felt more 
 
 We struggled a little as a team, as my team member Sanjay had never used Git before. We had to assist in their set up, but once we became familiar with the web page it was easier to navigate and find the resources we needed.
 
+Task 3: 
+Understanding what is a constraint, and what does enforcement mean.
+
+Calude response: Constraint is a rule about what data is allowed in my tables (>e.g. Name can't be blank)
+
+Claude Response: Enforce a rue means something actviely stops the rule from being broken. Enforcement is the check, plus what happens when the check fails. 
+
+Example for our Python contract.py, Someone tries to Add a machine with serial XX-1 through the Pydantic model	Rejected: “serial numbers must start with ‘SN-’”
+
+We can enforce it by pytdantic, which essentially catches our error in the python code, such as friendly formats, business rules. Enforcing in the database means rules that must never break (unique keys, foreign keys not empty)
+
 **Was there any good/fun “struggling”/exploration?**  
 > Any show stoppers – anything where you should reach out to peers or instructors?
 
