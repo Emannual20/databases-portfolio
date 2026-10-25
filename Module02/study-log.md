@@ -2,7 +2,7 @@
 
 **Reference Links:**
 
-From this source, I understood he definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer) <br>
+From this source, I understood the definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer) <br>
 
 Entity Relationship Model: [Wiki Entity Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)<br>
 
