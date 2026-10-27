@@ -45,11 +45,18 @@ _Difficulties faced in Task 3:_<br>
 **Was there any good/fun “struggling”/exploration?**  
 > Any show stoppers – anything where you should reach out to peers or instructors?
 
-**How was your interaction with peers/instructors?**
+The main struggle through module was understanding defects, even with the help of AI, it took some time and discussion with my group members before fully understanding what we were doing. <br>
 
+**How was your interaction with peers/instructors?**<br>
+
+The group dicussions helped particularly with the Entity Relationship Models, allowing us to distinguish the different types of reltionships, where to place the surrogate key from the natural key. The Professor helped to explain certain confusing areas, such as in Task 3, explaining the difference between the corrected schema in Pydantic and the SQLAlchemy table. 
+- Pydantic rules correct the tables before the SQL is even made, for example raising an error if the serial number does not start with "SN-"
+- Instead of just leaving the data type as TEXT, we now implement proper data types for specfici attributes, such as machine_id is now an Integer. As well as the enforcement of keys and Nullable as False, preventing empty attribute values for entities.
 
 ## Help and extra work
 **Who helped you, gave feedback, was it valuable?**
+
+Sanjay helped me with e understanding of constraints and enforcement. He also assisted with the hardware problem, navigating windows terminal and the courses's Unx-style instructions. Most valuably, he helped with the issues with pushing to Git, as I made the mistake of working locally before pulling, causing a conflict with the push amd merger. 
 
 **Who did you help, gave feedback to?**
 

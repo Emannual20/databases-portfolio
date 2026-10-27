@@ -49,6 +49,6 @@ Elijah helped us with the game, during the prompt question of
 
 **Who did you help, gave feedback to?**
 
-I helped Mohammed with the Github isntallation and copying over the folder, to creat his own portfolio
+I helped Mohammed with the Github isntallation and copying over the folder, to create his own portfolio
 
 ** Did you present, implement, made a PR, or fix something that was crucial for the class in itself? **
