@@ -15,10 +15,8 @@ By the end of this module, you can:
 ## Task 1
 This task was executed by myself, in [er-audit.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/er-audit.md)
 
-## Task ...
-
-This task was executed by my partner. The implementation was about ... 
-It is [here](https://github.com/partner/iot-portfolio/Module02/Readme.md#task-2).
+## Task 2 - 5
+It is [study-log.md](/Module02/study-log.md).
 
 ## Reflection 2
 [Reflection 2](/Reflections/ref02.md)
@@ -28,8 +26,4 @@ It is [here](https://github.com/partner/iot-portfolio/Module02/Readme.md#task-2)
 ...
 
 If the module is longer than 1 week, you might have several reflections within it. If not, delete this and the following.
-
-## Reflection 3
-[Reflection 3](/Reflections/ref03.md)
-
 
