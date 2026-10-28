@@ -23,7 +23,7 @@ Sanjay's repository serves as the central hub for our pod's shared workstream re
 
 ### Task 1: LLM Generation & Query Profiling (Task 1)
 Generated a complex aggregation query with Claude after predicting the execution plan, then verifying with `EXPLAIN QUERY PLAN` to check for full table scans.
-* **Generated query, prediction and verification:** [Task 1 file](Module03/prediction_verification.md)
+* **Generated query, prediction and verification:** [Task 1 file](prediction_verification.md)
 
 ### Task 2: Index Benchmarking
 LLM optimization by adding indexes, with benchmarks to determine if an i,provement actually occured. 
