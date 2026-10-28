@@ -6,10 +6,10 @@
 - Customer_id will be index so it will be `SEARCH`, same for the order_id
 - For the city it will use `SCAN` and qty as well
 
-Insert Claude Response here: (Screenshot)
-
-Insert query result here: (Screenshot)
-
+**Insert Claude Response here:**
+![Claude Response](pictures/task_1_query_explained.png)
+**Insert query result here:**
+![Result](pictures/Task1_ran_the _query.png)
 - My prediction was correct for for c and o, because both are looked up by `INTEGER` PRIMARY KEY, but ol.order_id has no index, so order_line is the one that gets `SCAN`.
 
 - My prediction was wrong as city and qty are columns, not plan lines. (nothing about product or temp B-trees)	SEARCH p and three USE TEMP B-TREE lines were missing
