@@ -8,7 +8,7 @@
 
 **Insert Claude Response here:**
 ![Claude Response](pictures/task_1_query_explained.png)<br>
-**Insert query result here:**
+**Insert query result here:**<br>
 ![Result](pictures/task1_ran_the_query.png)<br>
 - My prediction was correct for for c and o, because both are looked up by `INTEGER` PRIMARY KEY, but ol.order_id has no index, so order_line is the one that gets `SCAN`.
 

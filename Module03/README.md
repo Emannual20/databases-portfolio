@@ -27,8 +27,8 @@ Generated a complex aggregation query with Claude after predicting the execution
 
 ### Task 2: Index Benchmarking
 LLM optimization by adding indexes, with benchmarks to determine if an i,provement actually occured. 
-* **Database Setup:** [setup.sql](./setup.sql)
-* **Results & Proof:** [benchmark.md](./benchmark-results.md)
+* **Database Setup:** [setup.sql](setup.sql)
+* **Results & Proof:** [benchmark.md](benchmark.md)
 
 ### Task 3: Security: SQL Injection
 Reproducing injection payload, showcasing how the vulnerability is fixed by using bound parameters (`?`) instead of manual string escaping.
