@@ -1,4 +1,4 @@
-# Reflection 2 in Module 2
+# Reflection 3 in Module 3
 
 - What is your take-away, what do you want to remember, what would be your advice?
   Take-away can be small summary, but better outstanding points.
@@ -12,7 +12,7 @@
   - Who did you help, gave feedback to?
   - Did you present, implement, made a PR, or fix something that was crucial for the class in itself?
 
-# Reflection 2 (15/10/2026)
+# Reflection 3 (25/10/2026)
 
 **What is your take-away, what do you want to remember, what would be your advice? Take-away can be small summary, but better outstanding points.**
 
