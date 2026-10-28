@@ -1,6 +1,6 @@
 ### Task 2: Index benchmark
 
-Insert optimized query here: (Screenshot)
+**Insert optimized query here:**<br> ![Optimied Prompt](pictures/Task_2_index_becnhmark_optimized_query.png)
 ``` sql
 EXPLAIN QUERY PLAN
 SELECT c.city,
@@ -139,10 +139,10 @@ For the single-day query, filtering ordered_on >= '2025-06-01' AND ordered_on < 
 At 0.87 ms per execution, measuring a single run directly with .timer on would have landed right at the resolution floor of SQLite's timer (~1 ms), leading to noisy and unreliable numbers. Batching 1,000 runs brought total execution time to ~872 ms, giving a crystal-clear, accurate signal. <br>
 
 **Core Takeaway for the Lab:**<br>
-Selective filters love indexes: When a WHERE clause reduces the target dataset to a small fraction (e.g., 1 day out of 365), an index like ix_orders_ordered_on dramatically cuts down read operations.
+Selective filters love indexes: When a `WHERE` clause reduces the target dataset to a small fraction (e.g., 1 day out of 365), an index like ix_orders_ordered_on dramatically cuts down read operations.
 
 Broad aggregations benefit less: When a query processes a large chunk of the entire dataset, sequential scans often perform similarly to or better than index lookups due to random I/O overhead.
 
 **Summary of Results**
 
-Selectivity (Step 3): Scanning a large fraction of a table sequentially is often as fast as or faster than index lookups because B-Tree traversal adds non-sequential memory/disk overhead.High Selectivity (Step 4): When a WHERE clause filters down to a small slice of data (a single day out of a full year), an index eliminates full-table scans and yields dramatic speedups (~44x).Query Plan Changes $\neq$ Guaranteed SpeedupAn index changing a plan from SCAN to SEARCH proves the query planner is using the index, but it does not guarantee a performance win. Always verify plan changes with timing measurements.Dead Weight Indexesix_orderline_product provided zero benefit to either query because primary key lookups on product(product_id) were already handled by SQLite's internal PK index. Unnecessary indexes should be dropped to avoid write overhead during INSERT/UPDATE operations.Measurement AccuracySub-millisecond queries (like Step 4) fall below standard timer resolution limits ($\sim 1\text{ ms}$). Amortizing across 1,000 runs isolates real performance gains from system noise.
+Indexes aren't a automatic silver bullet. They only boost performance when queries filter for tiny subsets of data—high selectivity. Because index navigation adds overhead, a plan switching from SCAN to SEARCH doesn't guarantee a speedup, and useless indexes just slow down writes. Always measure gains over 1,000 runs to beat system timer noise.
