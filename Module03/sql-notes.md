@@ -20,30 +20,34 @@ Logial Execution Order: <br>
 6) DISTINCT
 
 ## Task A: Plan safari
-
+**Our predictions: SCAN**
 ``` sql
 SELECT * FROM maint_job WHERE technician = 'Beier';
 ```
-**Our predictions: SCAN** <br>
 **Result:**  
 ```
 QUERY PLAN
 `--SCAN maint_job
 ```
-
+**Our predictions: SCAN**
+``` sql
 SELECT * FROM machine WHERE machine_name = 'cnc-02';
-We predicted SCAN
+```
 **Result**:
+```
 QUERY PLAN
 `--SCAN machine
-
+```
+**Our predictions: SEARCH**
+``` sql
 SELECT * FROM maint_job WHERE technician LIKE '%ei%';
-We predicted SEARCH
+```
 **Result:**
+```
 QUERY PLAN
 `--SCAN maint_job
-
-> After adding the index:
+```
+**After adding the index:**
 
 **Result 1:**
 ```
@@ -66,10 +70,10 @@ QUERY PLAN
 
 Group Task Completed on Sanjay's Portfolio: [here](https://github.com/yajnas-crpto/databases_portfolio_sanjay/blob/main/Module03/sql-notes.md)
 
-For Task B, we need to make mathematical equation. For SELECT * FROM maint_job WHERE technician = 'Beier'; command, Logic and sequanece should be like this: sigma technician (because we select from WHERE? from technician) equals 'Beier' is text value and (maint\_job) means this means we are doing filtering to the main_job table
+For Task B, we need to make mathematical equation. For ``` sql SELECT * FROM maint_job WHERE technician = 'Beier';``` command, Logic and sequence should be: $\sigma$ technician (because we select from WHERE? from technician) equals 'Beier' is text value and (maint\_job) means this means we are doing filtering to the main_job table. <br>
 $\sigma_{technician='Beier'}(maint\_job)$
 
-LLM Comparison: I asked Gemini to translate the same query. We completely agreed on using the selection operator ($\sigma$) for the WHERE clause. The only difference in our approach was a minor learning point: the LLM pointed out that the projection operator ($\pi$) is usually omitted entirely when the SQL query uses SELECT *.
+LLM Comparison: We asked Gemini to translate the same query. We completely agreed on using the selection operator ($\sigma$) for the WHERE clause. The only difference in our approach was a minor learning point: the LLM pointed out that the projection operator ($\pi$) is usually omitted entirely when the SQL query uses SELECT *.
 
 ### Task C: Explain & share with another pod
 * **Plan Comparison**: Our Windows SQLite plan matched the macOS SQLite plan from the neighboring pod; both correctly used SEARCH for direct equality matches.   
@@ -77,7 +81,7 @@ LLM Comparison: I asked Gemini to translate the same query. We completely agreed
 * **The Index Surprise (Neighboring Pod)**: Leading wildcards (LIKE '%ei%') also force a SCAN because the engine cannot use the B-tree's alphabetical sorting. Also, asking for unindexed columns breaks a "covering" index, forcing the engine to visit the main table.   
 * **Unresolved Question for Discord**: If functions and wildcards break indexes, how do we efficiently optimize case-insensitive searches or partial text matches in SQLite? 
 
-Studio Lab: Generate, Profile and Secure 
+### Studio Lab: Generate, Profile and Secure 
 
 1. Where do 240,000 rows come from? From the recursive CTE, which generates the numbers instead of reading them from a table. It starts with one row (SELECT 1), then repeatedly adds a row with x+1, and stops when WHERE x < 240000 is false. n is a virtual table that exists only for that one statement, and the SELECT turns each x into a row of real data.
 
@@ -87,14 +91,14 @@ Studio Lab: Generate, Profile and Secure
 
 4. Why build the date modifier with ||? SQLite’s date modifiers are text strings like '+17 days', so the number has to be glued into a string: '+' joined with (x % 540) joined with ' days'. At x = 540, 540 % 540 is 0, so the modifier is '+0 days' and the date is 2025-01-01 again. The dates cycle every 540 days, from 2025-01-01 to 2026-06-24 (the maximum offset is 539).
 
-5. What does printf('%05d', x) buy you? Zero-padding makes text sort in numeric order. I sorted four values both ways:
+5. What does printf('%05d', x) buy you? Zero-padding makes text sort in numeric order.
 
 ## Task 1: Ask the LLM, then check the plan
 
-"SQLite schema: customer(customer_id, name, city), product(product_id, sku, price), orders(order_id, customer_id, ordered_on, status), order_line(order_id, product_id, qty). Write a query that returns, for each city, the number of distinct customers and the total revenue (sum of qty*price) of orders placed in 2025, ordered by revenue descending."
+> "SQLite schema: customer(customer_id, name, city), product(product_id, sku, price), orders(order_id, customer_id, ordered_on, status), order_line(order_id, product_id, qty). Write a query that returns, for each city, the number of distinct customers and the total revenue (sum of qty*price) of orders placed in 2025, ordered by revenue descending."
 
 **My prediction:**
-- Customer_id will be index so it will be SEARCh, same for the order_id
+- Customer_id will be index so it will be `SEARCH`, same for the order_id
 - For the city it will use SCAN and qty 
 
 Insert Claude Response here: (Screenshot)
