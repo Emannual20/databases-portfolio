@@ -291,6 +291,19 @@ Broad aggregations benefit less: When a query processes a large chunk of the ent
 
 Summary of ResultsQuery WorkloadBaseline TimeBest Index / StrategyBest TimeSpeedupKey MechanismStep 3: Full-Year Dashboard (~240k rows)10.45 msix_orders_ordered_on6.74 ms~1.5xBroad range scan; table scanning is already near-optimal due to sequential I/O.Step 4: Single-Day Lookup (< 1% of data)38.67 msix_orders_ordered_on0.87 ms~44.4xHigh selectivity; B-Tree search skips >99% of unneeded rows instantly.Core Engineering TakeawaysSelectivity Dictates Index ValueLow Selectivity (Step 3): Scanning a large fraction of a table sequentially is often as fast as or faster than index lookups because B-Tree traversal adds non-sequential memory/disk overhead.High Selectivity (Step 4): When a WHERE clause filters down to a small slice of data (a single day out of a full year), an index eliminates full-table scans and yields dramatic speedups (~44x).Query Plan Changes $\neq$ Guaranteed SpeedupAn index changing a plan from SCAN to SEARCH proves the query planner is using the index, but it does not guarantee a performance win. Always verify plan changes with timing measurements.Dead Weight Indexesix_orderline_product provided zero benefit to either query because primary key lookups on product(product_id) were already handled by SQLite's internal PK index. Unnecessary indexes should be dropped to avoid write overhead during INSERT/UPDATE operations.Measurement AccuracySub-millisecond queries (like Step 4) fall below standard timer resolution limits ($\sim 1\text{ ms}$). Amortizing across 1,000 runs isolates real performance gains from system noise.
 
+### Task 3: The Injection Drill
+
+Insert python file here
+
+**Output:**
+```
+normal   : [(1, 'Customer 1')]
+injected : [(1, 'Customer 1'), (2, 'Customer 2'), (3, 'Customer 3')] ...
+safe     : []
+```
+
+
+
 ## Reflection 3
 [Reflection 3](/Reflections/ref03.md)
 
