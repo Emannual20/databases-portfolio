@@ -19,7 +19,7 @@ This module gives you the opportunity to explore complex querying and query opti
 Sanjay's repository serves as the central hub for our pod's shared workstream results. I took the "Clause Order" workstream, while my pod mates (Sanjay, Lin, and Isa) handled Relational Algebra, Clause Order, and Tuning/Security. 
 * **Shared File:** [Pod's shared sql-notes.md](https://github.com/yajnas-crpto/databases_portfolio_sanjay/blob/main/Module03/sql-notes.md)
 
-* **Detailed self study:** [My sql-notes.md](Module03/sql-notes.md)
+* **Detailed self study:** [My sql-notes.md](sql-notes.md)
 
 ### Task 1: LLM Generation & Query Profiling (Task 1)
 Generated a complex aggregation query with Claude after predicting the execution plan, then verifying with `EXPLAIN QUERY PLAN` to check for full table scans.
