@@ -2,11 +2,11 @@
 
 **Reference Links:**
 
-From this source, I understood the definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer) <br>
+From this source, I understood the definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer)<br>
+Source: [Wiki Entity Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)<br>
 
-Entity Relationship Model: [Wiki Entity Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)<br>
-
-Cardinality: [Wiki Cardinality](https://en.wikipedia.org/wiki/Cardinality_(data_modeling))<br>
+This source helped me understand the different types of cardinality, and with the drawing of ER diagrams and their relationship markers.<br>
+Source: [Wiki Cardinality](https://en.wikipedia.org/wiki/Cardinality_(data_modeling))<br>
 
 EER: [Wiki Enhanced Entity Relationship](https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model)<br>
 
