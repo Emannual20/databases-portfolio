@@ -10,25 +10,25 @@ By the end of this module, you can:
 
 ## Task Inspirations
 
-**1. How this class works**
+**1. How this class works**<br>
 The course is problem-based: I had to find answers and explanations myself, by reading documentation, asking an LLM, comparing against my team members (Sanjay, Jo Marie and Lin), and fixing my own mistakes. My portfolio (Task 1, 2 and 3) is the evidence so every task has visible proof, such as commands, outputs and screenshots.
 
-**2. Personal GitHub portfolio and .gitignore**
+**2. Personal GitHub portfolio and .gitignore**<br>
 Cloning the course template through the terminal, instead of GitHub Desktop, was the habit the later modules needed. The `.gitignore` taught me a practical lesson keeping databases and secrets our of Git. In Task 11: it blocked `.db` files, so I had to force-add `telemetry.db` to make it reachable by Datasette Lite. That showed me that keeping databases out of Git is a deliberate choice that can be overridden.
 
-**3. Reproducible toolchain with uv**
+**3. Reproducible toolchain with uv**<br>
 `uv-check.py`, `pyproject.toml` and `uv.lock` pin one Python and the packages so that anyone can rebuild my setup. I used the same tool later with `uvx` to run Datasette and `sqlite-utils` without installing them permanently. (Tasks 3, 10, 11)
 
-**4. Embedded vs. client/server, with a measurement**
+**4. Embedded vs. client/server, with a measurement**<br>
 Embedded server means a locally run on a machine, it keeps its own data locally. In Task 6 I measured instead of assuming: `telemetry.db` holds 172,800 rows in about 10 MB, queried with no server running. In Task 9, copying it with `.backup` gave the same 10,280 KB, which showed that the whole database is just one file.
 
-**5. Loading rows into SQLite and querying them from Python**
+**5. Loading rows into SQLite and querying them from Python**<br>
 I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). (Tasks 6, 9, 11)
 
-**6. Verify before you trust an LLM query**
+**6. Verify before you trust an LLM query**<br>
 In Task 7, the model assumed "overnight" meant 18:00 to midnight, and running both versions showed different averages. Adding `OR time(ts) < '06:00:00'` fixed the definition. I also checked the query plan with `EXPLAIN QUERY PLAN`, and I tried to break the prompt on purpose, which showed me that the model catches invalid SQL but not vague wording. (Task 7)
 
-## Task Personal Profile
+## Task Personal Profile <br>
 My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge<br>
 Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
