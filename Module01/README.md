@@ -1,5 +1,9 @@
 # Module 1
-By the end of this module, you can:
+
+## 🎯 Learning Goals
+The first class. We open with a short introduction to **how this class works** (Part A), then run this module's studio in the same session, together and in person.
+
+**By the end of this module, you can:**
 
 1. Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
 2. Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
