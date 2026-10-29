@@ -45,7 +45,7 @@ It was very fun to work with my team members as well as the teams around us, rel
 **Who helped you, gave feedback, was it valuable?**
 
 Elijah helped us with the game, during the prompt question of 
-![Difficulties faced](https://github.com/Emannual20/databases-portfolio/blob/main/Reflections/Screenshot%202026-10-09%20182855.png?raw=true)
+![Difficulties faced](pictures/Elijah_help)
 
 **Who did you help, gave feedback to?**
 
