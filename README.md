@@ -21,8 +21,8 @@ My personal profile and expectations, you can find [here](Module01/README.md#tas
 - [Module 1: IoT Introduction](Module01/README.md), 
   [Reflection 1](Reflections/ref01.md)
 - [Module 2: Hardware and Basic Electronics](Module02/README.md),
-  [Reflection 2](Reflections/ref02.md), [Reflection 3](Reflections/ref03.md)
-- - [Module 3: IoT Introduction](Module01/README.md), 
+  [Reflection 2](Reflections/ref02.md)
+- [Module 3: IoT Introduction](Module01/README.md), 
   [Reflection 3](Reflections/ref01.md)
 - [Module 4: Hardware and Basic Electronics](Module02/README.md),
   [Reflection 4](Reflections/ref02.md)
