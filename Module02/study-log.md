@@ -21,10 +21,9 @@ _"What is a surrogate key and its purpose?"_<br>
 A surrogate key is an artificially generated, unique identifier added to a database table to act as the primary key. Its primary purpose is to provide a stable, system-managed key that is independent of any business logic, ensuring reliable relationships between tables even if the underlying business data changes.<br>
 Source URL: [Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)<br>
 
-Googled Questions:
+**Googled Questions:**
 
-"How do you draw an Entity Relationship Diagram in SQL": [How to Drw ER Digrms)https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/
-
+"How do you draw an Entity Relationship Diagram in SQL": [How to Draw ER Diagrams](https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/)
 
 Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
 
@@ -37,7 +36,7 @@ Your two best found ER sketches — hunt down ER/EER example sketches that teach
 ## Task B: From words to sketch
 All diagrams were self-made in draw.io, with help from Geeks for Geeks<br>
 
-1:1 — A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Key goes to the many side, and the nameplate is its own entity.
+**1:1** A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Key goes to the many side, and the nameplate is its own entity.
 
 ![1:1](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1to1%20A%20Workshop%20Keeps%20machines.drawio.svg)
 
