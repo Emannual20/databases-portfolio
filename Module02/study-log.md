@@ -40,20 +40,21 @@ All diagrams were self-made in draw.io, with help from Geeks for Geeks<br>
 
 ![1:1](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1to1%20A%20Workshop%20Keeps%20machines.drawio.svg)
 
-1:n — Each machine carries many sensors; every sensor is installed on exactly one machine. → The many side holds the foreign key.
+**1:n** Each machine carries many sensors; every sensor is installed on exactly one machine. → The many side holds the foreign key.
 
 ![1:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1ton%20diagram.drawio.svg)
 
-m:n — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → We need a junction table, and it holds foreign keys.
+**m:n** — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → We need a junction table, and it holds foreign keys.
 
 ![m:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/many%20to%20many.drawio.svg)
 
-Entity vs. attribute vs. relationship — A maintenance job happens on one machine, is done by one technician on one date; a technician performs many jobs. → Is the job a relationship or an entity? Is the technician an entity or just a name?
+**Entity vs. attribute vs. relationship:** 
+A maintenance job happens on one machine, is done by one technician on one date; a technician performs many jobs. → Is the job a relationship or an entity? Is the technician an entity or just a name?
 
 Then prove one: write the CREATE TABLE for your favourite sketch, insert two rows, and show the COUNT query that demonstrates its cardinality.
 
--- Step 1: CREATE TABLES<br>
-```
+**Step 1: CREATE TABLES**<br>
+``` sql
 CREATE TABLE machines (
     machine_id INT PRIMARY KEY,
     location VARCHAR(100) NOT NULL
@@ -66,8 +67,8 @@ CREATE TABLE sensors (
     FOREIGN KEY (machine_id) REFERENCES machines(machine_id)
 );
 ```
--- Step 2: INSERT DATA (1 Machine, 2 Sensors referencing that Machine)<br>
-```
+**Step 2: INSERT DATA (1 Machine, 2 Sensors referencing that Machine)**<br>
+``` sql
 INSERT INTO machines (machine_id, location) 
 VALUES (101, 'Assembly Line A');
 
@@ -76,8 +77,8 @@ VALUES
     (1, 'Vibration', 101),
     (2, 'Temperature', 101);
 ```
--- Step 3: COUNT QUERY TO PROVE CARDINALITY (1:n)
-```
+**Step 3: COUNT QUERY TO PROVE CARDINALITY (1:n)**
+``` sql
 SELECT 
     m.machine_id,
     m.location,
