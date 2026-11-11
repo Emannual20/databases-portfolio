@@ -94,13 +94,16 @@ column by converting it, while rejecting 1.5.
 ### Task 1: 
 
 sqlite> INSERT INTO reading(sensor_id, ts, value, interval_s) VALUES (1,'2026-03-01 08:00:01', 9000, 1);
+
+**Error:**
 Error near line 3: CHECK constraint failed: value >= -273.15 AND value <= 5000
 
 sqlite> INSERT INTO reading(sensor_id, ts, value, interval_s) VALUES (1,'2026-03-01 08:00:02', 'hot', 1);
+**Error:**
 Error near line 4: cannot store TEXT value in REAL column reading.value
 
 sqlite> INSERT INTO reading(sensor_id, ts, value, interval_s) VALUES (99,'2026-03-01 08:00:03', 40, 1);
-
+**Initial Observation:**
 In the beginning, this ran fine:
 1. A foreign key in the schema isn’t enforced until each connection turns it on. SQLite checks REFERENCES rules only after PRAGMA foreign_keys = ON;, and the setting resets to off every time you open a new shell, so your insert for sensor 99 was silently accepted.
 2. Turning it on doesn’t repair data that is already bad. The orphan row stays in the table until you find it with PRAGMA foreign_key_check; and delete it.
@@ -112,11 +115,14 @@ In the beginning, this ran fine:
 
 **Result:**
 sqlite> INSERT INTO reading(sensor_id, ts, value, interval_s) VALUES (99,'2026-03-01 08:00:03', 40, 1);
+**Error:**
 Error near line 9: FOREIGN KEY constraint failed
 
 sqlite> INSERT INTO sensor VALUES (3,'cnc-01','temp_c','degC');
+**Error:**
 Error near line 10: UNIQUE constraint failed: sensor.machine_id, sensor.metric
 
+**Generted energy_j vlue for vlid row:**
 sqlite> SELECT reading_id, value, interval_s, energy_j FROM reading;
 ╭────────────┬───────┬────────────┬──────────╮
 │ reading_id │ value │ interval_s │ energy_j │
@@ -149,10 +155,61 @@ o> & c:\Users\gamer\databases-portfolio\.venv\Scripts\python.exe c:/Users/gamer/
 file rows: 5 | table rows before: 1 | after: 5 | new rows: 4
 
 ### Task 3: Triggers for alarms and audit
+Trigger File: Insert trigger file here
+
+Insert Image of output here:
+**Output:**
 
 What is a trigger: A rule that fires itself based on the table, can have conditions that are optional.
 
 When it fires	AFTER INSERT ON reading (alarm) and AFTER UPDATE OF value ON reading (audit)
 A condition (optional)	WHEN NEW.value > 2.0 AND ...is vib_rms
-What it does	An INSERT into alarm or audit
 
+### Task 4: Access control without a server
+
+In SQLite, there is no GRANT to protect our data as it is a simple file running locally. 
+
+We create a view to prevent people from dumping out all the raw sensor readings, instead we let them look through a window that only shows summary information.
+
+cmod 444 which is a linux command puts a lock on the database file, turning it to read-only.
+
+Powershell Command on windows to make database files Read-Only: Set-ItemProperty -Path Module04/edge.db -Name IsReadOnly -Value $true
+
+''' sql
+(databases-portfolio) PS C:\Users\gamer\databases-portfolio> sqlite3 "file:Module04/edge.db?mode=ro" "SELECT COUNT(*) FROM reading;"
+
+"""mode=ro means read-only"""
+╭──────────╮
+│ COUNT(*) │
+╞══════════╡
+│    10000 │
+╰──────────╯
+'''
+
+**Trying to delete a reading will throw an error**
+(databases-portfolio) PS C:\Users\gamer\databases-portfolio> sqlite3 "file:Module04/edge.db?mode=ro" "DELETE FROM reading;"
+Error in 2nd command line argument: attempt to write a readonly database
+
+Insert Machine Health View here: (Picture of machien ehalth view)
+
+How would this differ with PostgrSQL Server, and why is file-permission-based control acceptale here but not for a multi-tenant web app?
+
+A PostgreSQL database engine manages internal authentication using SQL commands like CREATE ROLE and GRANT SELECT ON machine_health TO analyst, decoupling data permissions completely from the host operating system's file system. File-permission-based access control is acceptable for SQLite on an embedded IoT edge node because the database file runs in-process with a single application on an isolated physical device. In contrast, operating system file permissions cannot isolate individual application users sharing a multi-tenant web backend, as granting read access to the database file would expose all tenants' raw data to any system process. A server-based database uses fine-grained session authentication and Row-Level Security (RLS) to safely enforce data boundaries across thousands of concurrent web users.
+
+### Task 5: 
+
+Insert file link for phantom alarm test: (file link here)
+
+sqlite3 Module04/edge.db ".read Module04/phantom_alarm_trigger.sql"
+
+Error triggered the alarm:
+(databases-portfolio) PS C:\Users\gamer\databases-portfolio> sqlite3 Module04/edge.db ".read Module04/phantom_alarm_trigger.sql"
+Error near line 58 of Module04/phantom_alarm_trigger.sql: CHECK constraint failed: value >= -273.15 AND value <= 5000
+
+But when printing the alarms, no new alarm was added
+
+When `trg_vib_alarm` is defined as `BEFORE INSERT`, attempting to insert an invalid value (`value = 9000`, failing `CHECK <= 5000`) causes SQLite to execute the trigger write first, followed by a constraint failure on `reading`. 
+
+Because SQLite enforces statement-level atomicity, the constraint error triggers an `ABORT` that rolls back the entire statement—discarding the trigger's write to `alarm`. Consequently, no alarm row is saved for the failed insertion attempt.
+
+**Conclusion:** `AFTER INSERT` is the correct default for audit logs and alarms because it guarantees that side-effect records are only created for rows that pass all domain constraints and successfully persist to storage.
