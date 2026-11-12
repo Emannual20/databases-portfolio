@@ -50,8 +50,10 @@ Cloning the course template through the terminal, instead of GitHub Desktop, was
 
 ## **4. Embedded vs. client/server, with a measurement**<br>
 Embedded server means a locally run on a machine, it keeps its own data locally. In Task 6 I measured instead of assuming: `telemetry.db` holds 172,800 rows in about 10 MB, queried with no server running. In Task 9, copying it with `.backup` gave the same 10,280 KB, which showed that the whole database is just one file.
-**Task Evidence:**
-**Task 6: 
+**Task Evidence:**<br>
+> **Task 6:** []
+> - 
+> - 
 
 ## **5. Loading rows into SQLite and querying them from Python**<br>
 I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). (Tasks 6, 9, 11)
