@@ -37,14 +37,16 @@ The course is problem-based: I had to find answers and explanations myself, by r
 
 
 ## **2. Personal GitHub portfolio and .gitignore**<br>
-Cloning the course template through the terminal, instead of GitHub Desktop, was the habit the later modules needed. The `.gitignore` taught me a practical lesson keeping databases and secrets our of Git. In Task 11: it blocked `.db` files, so I had to force-add `telemetry.db` to make it reachable by Datasette Lite. That showed me that keeping databases out of Git is a deliberate choice that can be overridden.
+Cloning the course template through the terminal, instead of GitHub Desktop, was the habit the later modules needed. The `.gitignore` taught me a practical lesson keeping databases and secrets our of Git. In Task 11: it blocked `.db` files, so I had to force-add `telemetry.db` to make it reachable by Datasette Lite. That showed me that keeping databases out of Git is a deliberate choice that can be overridden.<br>
+
 **Task evidence:**
 > **Task 11:** [Datasette Lite & sqlite-utils](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#task-11)
 > - [First Commit](https://github.com/Emannual20/databases-portfolio/commit/6d6bd10ac56d2942bcba62c1b23a969fb5704b06)
 > - [.gtiginore File](https://github.com/Emannual20/databases-portfolio/blob/main/.gitignore)<br>
 
 ## **3. Reproducible toolchain with uv**<br>
-`uv-check.py`, `pyproject.toml` and `uv.lock` pin one Python and the packages so that anyone can rebuild my setup. I used the same tool later with `uvx` to run Datasette and `sqlite-utils` without installing them permanently.
+`uv-check.py`, `pyproject.toml` and `uv.lock` pin one Python and the packages so that anyone can rebuild my setup. I used the same tool later with `uvx` to run Datasette and `sqlite-utils` without installing them permanently.<br>
+
 **Task evidence:**
 >**Task 3:**
 > - UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
@@ -52,7 +54,8 @@ Cloning the course template through the terminal, instead of GitHub Desktop, was
 > - UV Lock: [uv.lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)<br>
 
 ## **4. Embedded vs. client/server, with a measurement**<br>
-Embedded server means a locally run on a machine, it keeps its own data locally. In Task 6 I measured instead of assuming: `telemetry.db` holds 172,800 rows in about 10 MB, queried with no server running. In Task 9, copying it with `.backup` gave the same 10,280 KB, which showed that the whole database is just one file.
+Embedded server means a locally run on a machine, it keeps its own data locally. In Task 6 I measured instead of assuming: `telemetry.db` holds 172,800 rows in about 10 MB, queried with no server running. In Task 9, copying it with `.backup` gave the same 10,280 KB, which showed that the whole database is just one file.<br>
+
 **Task Evidence:**
 > **Task 6:** [Load real telemetry and query it from Python](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#task-6-load-real-telemetry-and-query-it-from-python)
 > - [Generator Script](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
@@ -61,14 +64,17 @@ Embedded server means a locally run on a machine, it keeps its own data locally.
 > **Task 9:** [Comparing file sizes between backup.db and compact.db, the file sizes are identical](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#comparing-file-sizes-between-backupdb-and-compactdb-the-file-sizes-are-identical)
 
 ## **5. Loading rows into SQLite and querying them from Python**<br>
-I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). 
+I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). <br>
+
 **Task Evidence:**
 > - [Load Telemetry File](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/load_telemetry.py)
 > - [Queries](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/queries.sql)
 > - [Query Result](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
 
 ## **6. Verify before you trust an LLM query**<br>
-In Task 7, the model assumed "overnight" meant 18:00 to midnight, and running both versions showed different averages. Adding `OR time(ts) < '06:00:00'` fixed the definition. I also checked the query plan with `EXPLAIN QUERY PLAN`, and I tried to break the prompt on purpose, which showed me that the model catches invalid SQL but not vague wording. (Task 7)
+In Task 7, the model assumed "overnight" meant 18:00 to midnight, and running both versions showed different averages. Adding `OR time(ts) < '06:00:00'` fixed the definition. I also checked the query plan with `EXPLAIN QUERY PLAN`, and I tried to break the prompt on purpose, which showed me that the model catches invalid SQL but not vague wording.<br>
+**Task Evidence:**
+> **Task 7:** [LLM asissted-SQL Profitiling task](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#task-7-llm-asissted-sql-profitiling-task)
 
 # Task Personal Profile <br>
 My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge<br>
