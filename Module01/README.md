@@ -59,11 +59,11 @@ I loaded the same CSV three ways: a Python loader using `?` placeholders for bou
 ## **6. Verify before you trust an LLM query**<br>
 In Task 7, the model assumed "overnight" meant 18:00 to midnight, and running both versions showed different averages. Adding `OR time(ts) < '06:00:00'` fixed the definition. I also checked the query plan with `EXPLAIN QUERY PLAN`, and I tried to break the prompt on purpose, which showed me that the model catches invalid SQL but not vague wording. (Task 7)
 
-## Task Personal Profile <br>
+# Task Personal Profile <br>
 My skills: Python, Object Oriented Programming, Some Basci micro controller knowledge<br>
 Expectations: I expect to learn about databases, MYSQL, possibly docker if there is time
 
-### Task 4: Which dot command I found most helpful
+## Task 4: Which dot command I found most helpful
 Shell Tour: [Shell-Tour.txt](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/shell-tour.txt)<br>
 Tour: [Tour.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/tour.sql)<br>
 
@@ -73,15 +73,15 @@ I found the .help command the most helpful as it showed me all the commands i ne
 >**Dificulties faced :** 
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
 
-### Task 5: Play SQL Island
+## Task 5: Play SQL Island
 SQL game progress and reflection can be found here: [sql-island.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/sql-island.md)
 
-### Task 6: Load real telemetry and query it from Python
+## Task 6: Load real telemetry and query it from Python
 Generator Script: [generate_telemetry.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
 
 Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
 
-### Task 7: LLM asissted-SQL Profitiling task
+## Task 7: LLM asissted-SQL Profitiling task
 
 **First Prompt used :**
 "Here is my SQLite table: readings(ts TEXT, machine TEXT, temp_c REAL, vib_rms REAL, spindle_load REAL). Write a query that returns, for each machine, the average spindle load for readings taken overnight (after 18:00), ordered by average load descending." <br>
@@ -148,14 +148,14 @@ QUERY PLAN
 In the initial prompt, the model decided that overnight implied 18:00:00 - 00:00:00, and made its own assumption. However, it gave a suggestion to change the timeframe to suit the 18:00:00 - 06:00:00 timeframe as the real overnight definition. By running both commands, we can identify the difference and catch the discrepancy of using the wrong prompt with poor boundaries set. <br>
 When trying to break the prompt, Claude managed to catch the error befoire running, such as correctly idenfitfying ts>%18% was not valid SQLite, and corrected itself before returning the commands to be used. <br>
 
-### Task 8: Publish your data with Datasette
+## Task 8: Publish your data with Datasette
 
 25 rows where machine contains "cnc-01", spindle_load ≥ 60 and temp_c ≥ 46.5 sorted by machine
 ![Exported Filtered Readings](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/Exported_filtered.png)
 
 Exported CSV File: [Filtered.csv](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/exported_filtered.csv)
 
-### Task 9: sqlite3 shell power moves
+## Task 9: sqlite3 shell power moves
 
 “Because telemetry.db already contained a populated readings table from earlier Python work, I ran the CSV import into a separate scratch.db so that CREATE TABLE wouldn’t fail or .import wouldn’t duplicate the 172,800 existing rows, which left my original database untouched for the later steps"<br>
 
@@ -177,11 +177,9 @@ Different output modes like .mode box or .mode json are simply different ways to
 
 Result.json file here: [result.json](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/result.json)
 <br>
-
-Size of Back Up File: 10280KB
-Size of Compact File: 10280KB
-
-Comparing file sizes between backup.db and compact.db, the file sizes are identical.
+### Comparing file sizes between backup.db and compact.db, the file sizes are identical.
+> Size of Back Up File: 10280KB <br>
+> Size of Compact File: 10280KB <br>
 
 **Claude Explanation:**
 .backup copies the database page for page and VACUUM INTO only removes unused free space, so because telemetry.db was loaded once and never had anything deleted, there was no wasted space to remove and both files came out the same size.
@@ -192,7 +190,7 @@ Output from joining Tables:
 **Suprising Command:**
 Surprisingly, VACUUM is a compaction tool that had nothing to compact: the database had never had a single row deleted, so it contained zero wasted space, and the “compacted” copy came out byte-for-byte the same size as the original.
 
-### Task 10: Datasette - Facets, filters, and the JSON API
+## Task 10: Datasette - Facets, filters, and the JSON API
 
 Base URL: http://127.0.0.1:8001/telemetry/readings
 57,600 rows where machine = "cnc-01" sorted by rowid: http://127.0.0.1:8001/telemetry/readings?_sort=rowid&machine__exact=cnc-01
@@ -210,7 +208,7 @@ temp_c >30 ✖
 ...
 ```
 
-### Task 11: Datasette Lite & sqlite-utils — the same job, other tools
+## Task 11: Datasette Lite & sqlite-utils — the same job, other tools
 
 Insert file for toolbox.md here
 
