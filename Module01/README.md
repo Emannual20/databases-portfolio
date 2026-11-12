@@ -35,8 +35,6 @@ Take a first LLM-generated query, run it, and begin the habit that defines this 
 [Reflection 1](https://github.com/Emannual20/databases-portfolio/blob/main/Reflections/ref01.md)
 
 <br>
-<br>
-<br>
 
 ## Task Inspirations (Notes & Evidence)
 ## **1. How this class works**<br>
@@ -50,7 +48,7 @@ The course is problem-based: I had to find answers and explanations myself, by r
 Cloning the course template through the terminal, instead of GitHub Desktop, was the habit the later modules needed. The `.gitignore` taught me a practical lesson keeping databases and secrets our of Git. In Task 11: it blocked `.db` files, so I had to force-add `telemetry.db` to make it reachable by Datasette Lite. That showed me that keeping databases out of Git is a deliberate choice that can be overridden.<br>
 
 **Task evidence:**
-> **Task 11:** [Datasette Lite & sqlite-utils](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#task-11)
+> **Task 11:** [Datasette Lite & sqlite-utils](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#task-11-datasette-lite--sqlite-utils--the-same-job-other-tools)
 > - [First Commit](https://github.com/Emannual20/databases-portfolio/commit/6d6bd10ac56d2942bcba62c1b23a969fb5704b06)
 > - [.gtiginore File](https://github.com/Emannual20/databases-portfolio/blob/main/.gitignore)<br>
 
