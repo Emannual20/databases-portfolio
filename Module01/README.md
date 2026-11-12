@@ -30,11 +30,7 @@ The course is problem-based: I had to find answers and explanations myself, by r
 
 **Task Evidence:**
 >**Task 1:** [My portfolio](https://github.com/Emannual20/databases-portfolio) <br>
->**Task 2:** <br>
-> My partners:<br>
-> - Sanjay, [Sanjay portfolio link](https://github.com/yajnas-crpto/databases_portfolio_sanjay)
-> - Jo Marie, [Jo Marie portfolio link](https://github.com/jmanuel08/database-jomportfolio)
-> - Myomin Lin, [Myomin Lin portfolio link](https://github.com/mmlin801597/database-portfolio) <br>
+>**Task 2:** [My partners](https://github.com/Emannual20/databases-portfolio/blob/main/README.md#my-partners) <br>
 >**Task 3:** <br>
 > - UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
 > - Committed PyProject: [Pyproject.toml](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)<br>
