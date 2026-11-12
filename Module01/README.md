@@ -6,14 +6,16 @@ The first class. We open with a short introduction to **how this class works** (
 **By the end of this module, you can:**
 
 1. Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
-- [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore)
+- [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - Understnding how the clss works
 
 2. Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
-- [insert expalantion](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore)
-[inser inital portfolio commit]
-[insert personal github portfolio and gitingore.]
+- [Setting up Github Portfolio](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - My personlized Dtbse Portfolio strcuture nd files reuired
+- [First Commit](https://github.com/Emannual20/databases-portfolio/commit/6d6bd10ac56d2942bcba62c1b23a969fb5704b06)
+- [.gtiginore File](https://github.com/Emannual20/databases-portfolio/blob/main/.gitignore)
 
-4. Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
+3. Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
+- [Dependency Configurtion](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)
+- 
 
 
 5. Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
