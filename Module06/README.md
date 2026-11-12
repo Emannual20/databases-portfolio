@@ -1,15 +1,14 @@
-### Module 5 — Normalization vs. Denormalization Benchmarking Studio
+### Module 6a — The Analytical Engine (DuckDB)
 
 ## 🎯 Learning Goals
-This module gives you the opportunity to explore functional dependencies and normalization and achieve competency in trading schema design against real, measured performance.
+This module gives you the opportunity to explore analytical (columnar) engines and achieve competency in moving a workload to the right engine.
 
 By the end of this module, you can:
-
-1. Derive functional dependencies from a relation and identify candidate keys.
-2. Normalize a relation to 1NF, 2NF, and 3NF, explaining the anomaly each step removes.
-3. Denormalize deliberately to speed up a hot read path, and predict what it costs on writes and storage.
-4. Measure the trade-off: query latency, write cost, and database size — before and after.
-5. Decide, and defend, where a schema should sit on the normalization spectrum for a given workload.
+1. Move a table out of SQLite into **Parquet** reproducibly, from a script.
+2. Run the **same aggregate** in SQLite and DuckDB and report the difference honestly (interleaved runs, median).
+3. Read **`EXPLAIN ANALYZE`** and name the operator and row count that dominate.
+4. State, with a number, **where DuckDB is the wrong engine**.
+5. Recommend **what moves to the analytical copy** and how that copy stays fresh.
 
 ## Tasks:
 

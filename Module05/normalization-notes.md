@@ -3,16 +3,19 @@
 ## Round 1: Functionl Dependencies
 **Functional Dependencies:** If you know X, then Y is 100% fixed and predictable. Two rows with the exact same X can never have different Y values.
 
->**Example:**
->- Rule: A physcial machine lives at only one factory location.
->- Meaning: If you see machine cnc-01, it is definetly in Gütersloh, it cannot be in two cities at once.
+>**Example:**<br>
+>Rule: A physcial machine lives at only one factory location. <br>
+>Meaning: If you see machine cnc-01, it is definetly in Gütersloh, it cannot be in two cities at once.
 
 Candidate Key: Minimal set of attributes to determine the full details.
 
-Example: job_id is not enouhg information as one job can have multiple parts, we instead pair (job_id, part_no) a unique combination.
+>**Example:**<br>
+> job_id is not enough information as one job can have multiple parts. Instead we pair (job_id, part_no) a unique combination.
 
-Isa explined to me Normliztion nd Denormliztion, s well s the ndexing. [Include Clssroom Discussion file, link portfolios of reflections to one nother for dditionl evidence nd portfolios to Module 05]
+**Group Member Discussion:**
+>Isa explined to me Normliztion nd Denormliztion, as well as the indexing. [Include Clssroom Discussion file, link portfolios of reflections to one nother for dditionl evidence nd portfolios to Module 05]
 
+# Table of Assumptions & Observations
 | Functional dependency | Assumptions | Reason |
 |---|---|---|
 | `job_id -> machine_id` | Domain Guaranteed | A speicfic maintenance job occurs to one machine. |
@@ -22,31 +25,21 @@ Isa explined to me Normliztion nd Denormliztion, s well s the ndexing. [Include 
 | `job_id → site` | Merely observed | All `job_id`s happen to occur at site `Gütersloh`, but `Gütersloh` may not be the only working site.|
 | `technician → machine_id` | Merely observed | Obsereved tech-0 only worked exlusively on cc-01 and tech-1 on cnc-02, but the 5 rows may not be sufficient to deem this as a fact. |
 
-**Bonus FD Observed by Isa:** [Isa Normalization Notes](https://github.com/isa-babayev-ibabayev/databases-portfolio/blob/main/Module05/normalization-notes.md)
+**Bonus Functional dependency Observed by Isa:** [Isa Normalization Notes](https://github.com/isa-babayev-ibabayev/databases-portfolio/blob/main/Module05/normalization-notes.md)
 
 | `job_id → done_on` | Domain assumption in the full schema | A job has one completion date. |
 
-Domain Facts (Guaranteed Rules):
-- (job_id, part_no) $\rightarrow$ Candidate Key for the flat row.
+(job_id, part_no) is a candidate key. Individually, the information on job_id is insufficient in identifying the full information of the row. Together the two attributes determine the job attributes, the machine site, and the part price.
+
+Original Design: ![Insert ER Sketch Table]
+
+Insert ER sketch Proposed Schema
 
 Gate Question: "Which arrow disappears in the second diagram?"
 
 - The transitive arrow job_id -> site disappears from the job level. site is now determined exclusively by machine_id in the machine table.
 
-- The partial dependency arrow (job_id, part_no) -> part_price disappears from the junction table. part_price is now determined exclusively by part_no in the part table.
-
-## Round 1: See It
-
-My observations of the FDs:
-- job_id -> machine_id
-- job_id -> technician
-- machine_id -> site
-- part_no -> part_price
-- technician -> machine_id
-
-Insert ER Sketch Table:
-
-Insert ER sketch Proposed Schema
+- The partical dependency arrow (job_id, part_no) -> part_price disappears from the junction table. part_price is now determined exclusively by part_no in the part table.
 
 **Gemini Response:**
 # Functional Dependencies
