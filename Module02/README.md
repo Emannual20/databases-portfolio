@@ -4,7 +4,8 @@
 This module gives you the opportunity to explore conceptual data modeling and requirements analysis and achieve competency in reading, critiquing, and formalizing a data model.
 
 ### Learning Goal 1: 
-Reconstruct an ER/EER model (entities, attributes, keys, relationships, cardinalities) from an undocumented SQL schema. <br>
+Reconstruct an ER/EER model (entities, attributes, keys, relationships, cardinalities) from an undocumented SQL schema. 
+<br>
 **Task Evidence:**
 - Task B: [From words to sketch](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/study-log.md#task-b-from-words-to-sketch)
 - Task 1: [Reconstruct the ER Model](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/study-log.md#task-1-reconstruct-the-er-model)
