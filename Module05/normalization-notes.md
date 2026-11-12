@@ -1,8 +1,17 @@
 # Module 05: Normalization vs Denormalization Notes
 
 ## Round 1: Functionl Dependencies
+**Functional Dependencies:** If you know X, then Y is 100% fixed and predictable. Two rows with the exact same X can never have different Y values.
 
-1. Functional Dependency (FD) AnalysisA functional dependency $X \rightarrow Y$ states that if two rows match on attribute $X$, they must match on attribute $Y$.
+- **Example:**
+>Rule: A physcial machine lives at only one factory location.
+>Meaning: If you see machine cnc-01, it is definetly in Gütersloh, it cannot be in two cities at once.
+
+Candidate Key: Minimal set of attributes to determine the full details.
+
+Example: job_id is not enouhg information as one job can have multiple parts, we instead pair (job_id, part_no) a unique combination.
+
+Isa explined to me Normliztion nd Denormliztion, s well s the ndexing. [Include Clssroom Discussion file, link portfolios of reflections to one nother for dditionl evidence nd portfolios to Module 05]
 
 | Functional dependency | Assumptions | Reason |
 |---|---|---|
@@ -10,7 +19,8 @@
 | `job_id → technician` | Domain Guaranteed | A single job is assigned to one technician. |
 | `machine_id → site` | Domain Guaranteed | Each machine can only exist at one site at a time. |
 | `part_no → part_price` | Domain Guaranteed | A catalog part has a fixed unit price. |
-| `job_id → site` | Logically derived | `job_id → machine_id` and `machine_id → site` imply it transitively. |
+| `job_id → site` | Merely observed | All `job_id`s happen to occur at site `Gütersloh`, but `Gütersloh` may not be the only working site.|
+| `technician → machine_id` | Merely observed | Obsereved tech-0 only worked exlusively on cc-01 and tech-1 on cnc-02, but the 5 rows may not be sufficient to deem this as a fact. |
 
 **Bonus FD Observed by Isa:** [Isa Normalization Notes](https://github.com/isa-babayev-ibabayev/databases-portfolio/blob/main/Module05/normalization-notes.md)
 
@@ -19,29 +29,11 @@
 Domain Facts (Guaranteed Rules):
 - (job_id, part_no) $\rightarrow$ Candidate Key for the flat row.
 
-Merely Observed in Data (Accidental Artifacts of 5 Rows):
-- technician -> machine_id: In this sample, tech-0 only worked on cnc-01 and tech-1 on cnc-02. In real operations, technicians service multiple machines.
-- site -> technician / site -> machine_id: site is always Gütersloh across all 5 rows, making it look like a determinant, which is false in the broader domain.
-
 Gate Question: "Which arrow disappears in the second diagram?"
 
-Answer:
+- The transitive arrow job_id -> site disappears from the job level. site is now determined exclusively by machine_id in the machine table.
 
-The transitive arrow job_id -> site disappears from the job level. site is now determined exclusively by machine_id in the machine table.
-
-The partial dependency arrow (job_id, part_no) -> part_price disappears from the junction table. part_price is now determined exclusively by part_no in the part table.
-
-Functional Dependencies: If you know X, then Y is 100% fixed and predictable. Two rows with the exact same X can never have different Y values.
-
-Example:
-Rule: A physcial machine lives at only one factory location
-Meaning: If you see machine cnc-01, it is definetly in Gütersloh, it cannot be in two cities at once.
-
-Candidate Key: Minimal set of attributes to determine the full details.
-
-Example: job_id is not enouhg information as one job can have multiple parts, we instead pair (job_id, part_no) a unique combination.
-
-Isa explined to me Normliztion nd Denormliztion, s well s the ndexing. [Include Clssroom Discussion file, link portfolios of reflections to one nother for dditionl evidence nd portfolios to Module 05]
+- The partial dependency arrow (job_id, part_no) -> part_price disappears from the junction table. part_price is now determined exclusively by part_no in the part table.
 
 ## Round 1: See It
 
