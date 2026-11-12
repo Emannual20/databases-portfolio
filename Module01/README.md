@@ -5,26 +5,26 @@ The first class. We open with a short introduction to **how this class works** (
 
 **By the end of this module, you can:**
 
-1. Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
+### Learning Goal 1: Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
 - [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - Understanding how the class works and portoflio building
 
-2. Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
+### Learning Goal 2: Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
 - [Setting up Github Portfolio](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - My personalized Database Portfolio structure and files required
 - [First Commit](https://github.com/Emannual20/databases-portfolio/commit/6d6bd10ac56d2942bcba62c1b23a969fb5704b06)
 - [.gtiginore File](https://github.com/Emannual20/databases-portfolio/blob/main/.gitignore)
 
-3. Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
+### Learning Goal 3: Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
 - [Dependency Configurtion](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)
 - [UV Verification](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)
 - [UV Lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)
 
-4. Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
+### Learning Goal 4: Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
 - [Embedded vs. client/server, with a measurement](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#4-embedded-vs-clientserver-with-a-measurement)
 
-5. Load real rows into SQLite and query them from Python using bound parameters.
+### Learning Goal 5: Load real rows into SQLite and query them from Python using bound parameters.
 - [Loading rows into SQLite and querying them from Python](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#5-loading-rows-into-sqlite-and-querying-them-from-python)
 
-6. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
+### Learning Goal 6: Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
 ## Task Inspirations
 
