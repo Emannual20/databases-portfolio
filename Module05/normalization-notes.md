@@ -3,9 +3,9 @@
 ## Round 1: Functionl Dependencies
 **Functional Dependencies:** If you know X, then Y is 100% fixed and predictable. Two rows with the exact same X can never have different Y values.
 
-- **Example:**
->Rule: A physcial machine lives at only one factory location.
->Meaning: If you see machine cnc-01, it is definetly in Gütersloh, it cannot be in two cities at once.
+>**Example:**
+>- Rule: A physcial machine lives at only one factory location.
+>- Meaning: If you see machine cnc-01, it is definetly in Gütersloh, it cannot be in two cities at once.
 
 Candidate Key: Minimal set of attributes to determine the full details.
 
