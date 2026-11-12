@@ -39,6 +39,10 @@ The course is problem-based: I had to find answers and explanations myself, by r
 
 ## **2. Personal GitHub portfolio and .gitignore**<br>
 Cloning the course template through the terminal, instead of GitHub Desktop, was the habit the later modules needed. The `.gitignore` taught me a practical lesson keeping databases and secrets our of Git. In Task 11: it blocked `.db` files, so I had to force-add `telemetry.db` to make it reachable by Datasette Lite. That showed me that keeping databases out of Git is a deliberate choice that can be overridden.
+**Task evidence:**
+> - [First Commit](https://github.com/Emannual20/databases-portfolio/commit/6d6bd10ac56d2942bcba62c1b23a969fb5704b06)
+> - [.gtiginore File](https://github.com/Emannual20/databases-portfolio/blob/main/.gitignore)<br>
+> **Task 11:** [Datasette Lite & sqlite-utils](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#task-11)
 
 ## **3. Reproducible toolchain with uv**<br>
 `uv-check.py`, `pyproject.toml` and `uv.lock` pin one Python and the packages so that anyone can rebuild my setup. I used the same tool later with `uvx` to run Datasette and `sqlite-utils` without installing them permanently. (Tasks 3, 10, 11)
