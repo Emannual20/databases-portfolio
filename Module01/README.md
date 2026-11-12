@@ -61,7 +61,11 @@ Embedded server means a locally run on a machine, it keeps its own data locally.
 > **Task 9:** [Comparing file sizes between backup.db and compact.db, the file sizes are identical](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#comparing-file-sizes-between-backupdb-and-compactdb-the-file-sizes-are-identical)
 
 ## **5. Loading rows into SQLite and querying them from Python**<br>
-I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). (Tasks 6, 9, 11)
+I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). 
+**Task Evidence:**
+> - [Load Telemetry File](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/load_telemetry.py)
+> - [Queries](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/queries.sql)
+> - [Query Result](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
 
 ## **6. Verify before you trust an LLM query**<br>
 In Task 7, the model assumed "overnight" meant 18:00 to midnight, and running both versions showed different averages. Adding `OR time(ts) < '06:00:00'` fixed the definition. I also checked the query plan with `EXPLAIN QUERY PLAN`, and I tried to break the prompt on purpose, which showed me that the model catches invalid SQL but not vague wording. (Task 7)
