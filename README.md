@@ -7,7 +7,7 @@
 ## About this portfolio
 Documents my progress of lerning SQL through this Databases Course
 
-*My partners:*
+## *My partners:*
 - Sanjay, [portfolio link](https://github.com/yajnas-crpto)
 - Jo Marie, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 - Myomin Lin, [portfolio link](https://github.com/mmlin801597/database-portfolio)
