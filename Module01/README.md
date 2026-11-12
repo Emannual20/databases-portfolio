@@ -6,19 +6,19 @@ The first class. We open with a short introduction to **how this class works** (
 **By the end of this module, you can:**
 
 1. Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
-[insert how this class works link] 
+- [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore)
 
 2. Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
-[insert expalantion]
+- [insert expalantion](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore)
 [inser inital portfolio commit]
 [insert personal github portfolio and gitingore.]
 
-3. Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
+4. Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
 
 
-4. Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
-5. Load real rows into SQLite and query them from Python using bound parameters.
-6. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
+5. Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
+6. Load real rows into SQLite and query them from Python using bound parameters.
+7. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
 ## Task Inspirations
 
