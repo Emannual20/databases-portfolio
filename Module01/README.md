@@ -4,31 +4,31 @@
 The first class. We open with a short introduction to **how this class works** (Part A), then run this module's studio in the same session, together and in person.
 
 ### Learning Goal 1: 
-**Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.**
+Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
 - [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - Understanding how the class works and portoflio building
 
 ### Learning Goal 2: 
-**Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.**
+Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
 - [Setting up Github Portfolio](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - My personalized Database Portfolio structure and files required
 - [First Commit](https://github.com/Emannual20/databases-portfolio/commit/6d6bd10ac56d2942bcba62c1b23a969fb5704b06)
 - [.gtiginore File](https://github.com/Emannual20/databases-portfolio/blob/main/.gitignore)
 
 ### Learning Goal 3: 
-**Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.**
+Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
 - [Dependency Configurtion](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)
 - [UV Verification](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)
 - [UV Lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)
 
 ### Learning Goal 4: 
-**Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.**
+Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
 - [Embedded vs. client/server, with a measurement](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#4-embedded-vs-clientserver-with-a-measurement)
 
 ### Learning Goal 5:
-**Load real rows into SQLite and query them from Python using bound parameters.**
+Load real rows into SQLite and query them from Python using bound parameters.
 - [Loading rows into SQLite and querying them from Python](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#5-loading-rows-into-sqlite-and-querying-them-from-python)
 
 ### Learning Goal 6: 
-**Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.**
+Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 - [Verify befroe you trsut an LLM query](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#6-verify-before-you-trust-an-llm-query)
 
 ## Reflection 1
@@ -255,8 +255,9 @@ temp_c >30 ✖
 
 ## Task 11: Datasette Lite & sqlite-utils — the same job, other tools
 
-Insert file for toolbox.md here
+Tool Box: [toolbox.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/toolbox.md)
+<br>
+Datasette Lite:
+![Datasette Lite Portfolio Evidence](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pictures/datasette_Lite.png)
 
-Insert Screenshot here
-
-sqlite-utils took the fewest keystrokes: one insert command created the table, guessed the column types, and loaded all 172,800 rows, where the sqlite3 shell needed a CREATE TABLE plus .mode csv and .import, and Python needed a whole script. The Python loader was the clearest, because the schema, including the NOT NULL constraints that sqlite-utils left out, is written down explicitly, and the script can be rerun and kept in version control. I would use sqlite-utils for quickly exploring a CSV, the sqlite3 shell for one-off inspection and ad-hoc queries, and Python when the load is part of a repeatable pipeline that needs control over the schema or data cleaning.
+> sqlite-utils took the fewest keystrokes: one insert command created the table, guessed the column types, and loaded all 172,800 rows, where the sqlite3 shell needed a CREATE TABLE plus .mode csv and .import, and Python needed a whole script. The Python loader was the clearest, because the schema, including the NOT NULL constraints that sqlite-utils left out, is written down explicitly, and the script can be rerun and kept in version control. I would use sqlite-utils for quickly exploring a CSV, the sqlite3 shell for one-off inspection and ad-hoc queries, and Python when the load is part of a repeatable pipeline that needs control over the schema or data cleaning.
