@@ -1,6 +1,11 @@
-## Sebastian's Databases Portfolio (Database Coding Group)
+## Sebastian's Databases Portfolio
 
 *Author:* <Sebastian Soon>
+**Hochschule Bielefeld (HSBI)**  
+**Program:** Mechatronics & Automtion
+
+## About this portfolio
+Documents my progress of lerning SQL through this Databases Course
 
 *My partners:*
 - Sanjay, [portfolio link](https://github.com/yajnas-crpto)
