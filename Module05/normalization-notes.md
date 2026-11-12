@@ -1,5 +1,5 @@
 # Module 05: Normalization vs Denormalization Notes
-
+[link](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/06a-duckdb-analytical-engine.md#-story--the-report-that-outgrew-sqlite)
 ## Round 1: Functionl Dependencies
 **Functional Dependencies:** If you know X, then Y is 100% fixed and predictable. Two rows with the exact same X can never have different Y values.
 
