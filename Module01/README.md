@@ -5,7 +5,7 @@ The first class. We open with a short introduction to **how this class works** (
 
 ### Learning Goal 1: 
 Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
-- [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#2-personal-github-portfolio-and-gitignore) - Understanding how the class works and portoflio building
+- [How this class works](https://github.com/Emannual20/databases-portfolio/tree/main/Module01#1-how-this-class-works) - Understanding how the class works and portoflio building
 
 ### Learning Goal 2: 
 Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
