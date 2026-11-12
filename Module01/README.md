@@ -50,10 +50,11 @@ Cloning the course template through the terminal, instead of GitHub Desktop, was
 
 ## **4. Embedded vs. client/server, with a measurement**<br>
 Embedded server means a locally run on a machine, it keeps its own data locally. In Task 6 I measured instead of assuming: `telemetry.db` holds 172,800 rows in about 10 MB, queried with no server running. In Task 9, copying it with `.backup` gave the same 10,280 KB, which showed that the whole database is just one file.
-**Task Evidence:**<br>
-> **Task 6:** []
-> - 
-> - 
+**Task Evidence:**
+> **Task 6:** [Load real telemetry and query it from Python]((https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#task-6-load-real-telemetry-and-query-it-from-python))
+> - [Generator Script](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
+> - [Queries, File Size, Row Count and answers](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)<br>
+> **Task 9:** [Comparing file sizes between backup.db and compact.db, the file sizes are identical](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#comparing-file-sizes-between-backupdb-and-compactdb-the-file-sizes-are-identical)
 
 ## **5. Loading rows into SQLite and querying them from Python**<br>
 I loaded the same CSV three ways: a Python loader using `?` placeholders for bound parameters, the `sqlite3` shell with `.import`, and `sqlite-utils insert`. Comparing them showed me the trade-off between keystrokes and control over the schema (for example, `sqlite-utils` left out the `NOT NULL` constraints). (Tasks 6, 9, 11)
