@@ -1,4 +1,4 @@
-# Module 1
+# Module 1: Introduction & Local-First Foundations
 
 ## 🎯 Learning Goals
 The first class. We open with a short introduction to **how this class works** (Part A), then run this module's studio in the same session, together and in person.
@@ -6,18 +6,26 @@ The first class. We open with a short introduction to **how this class works** (
 **By the end of this module, you can:**
 
 1. Explain how this class works — the CBL/PBL philosophy, the portfolio-based Kombinationsprüfung, and the "moving bar" of a first-time course.
+[insert how this class works link] 
+
 2. Set up your personal GitHub portfolio from the course template, with a clean first commit and a .gitignore that keeps databases and secrets out of Git.
+[insert expalantion]
+[inser inital portfolio commit]
+[insert personal github portfolio and gitingore.]
+
 3. Set up the entire toolchain reproducibly with uv — one fixed Python plus SQLite, DuckDB, Datasette, and more — on Windows, macOS, or Linux, and verify it.
+
+
 4. Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
 5. Load real rows into SQLite and query them from Python using bound parameters.
 6. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
 ## Task Inspirations
 
-**1. How this class works**<br>
+## **1. How this class works**<br>
 The course is problem-based: I had to find answers and explanations myself, by reading documentation, asking an LLM, comparing against my team members (Sanjay, Jo Marie and Lin), and fixing my own mistakes. My portfolio (Task 1, 2 and 3) is the evidence so every task has visible proof, such as commands, outputs and screenshots.
 
-**2. Personal GitHub portfolio and .gitignore**<br>
+## **2. Personal GitHub portfolio and .gitignore**<br>
 Cloning the course template through the terminal, instead of GitHub Desktop, was the habit the later modules needed. The `.gitignore` taught me a practical lesson keeping databases and secrets our of Git. In Task 11: it blocked `.db` files, so I had to force-add `telemetry.db` to make it reachable by Datasette Lite. That showed me that keeping databases out of Git is a deliberate choice that can be overridden.
 
 **3. Reproducible toolchain with uv**<br>
