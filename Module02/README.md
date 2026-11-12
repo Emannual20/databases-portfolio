@@ -13,6 +13,9 @@ Reconstruct an ER/EER model (entities, attributes, keys, relationships, cardinal
 
 ### Learning Goal 2:
 Identify integrity defects — missing foreign keys, orphan rows, redundant data, normalization violations — with queries, not intuition.
+**Task Evidence:**
+- Task A: [From words to sketch](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/study-log.md#task-b-from-words-to-sketch)
+- Task 2: [Find integrity defects with queries](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/study-log.md#task-2-find-the-integrity-efects-with-queries)
 
 ### Learning Goal 3:
 Distinguish an entity relationship from an attribute, and a surrogate key from a natural key, and justify the choice.
