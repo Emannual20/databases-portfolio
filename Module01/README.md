@@ -31,7 +31,7 @@ The course is problem-based: I had to find answers and explanations myself, by r
 **Task Evidence:**
 >**Task 1:** [My portfolio](https://github.com/Emannual20/databases-portfolio) <br>
 >**Task 2:** [My partners](https://github.com/Emannual20/databases-portfolio/blob/main/README.md#my-partners) <br>
->**Task 3:** <br>
+>**Task 3:**
 > - UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
 > - Committed PyProject: [Pyproject.toml](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)<br>
 > - UV Lock: [uv.lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)<br>
