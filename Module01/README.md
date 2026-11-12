@@ -19,7 +19,8 @@ The first class. We open with a short introduction to **how this class works** (
 - [UV Lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)
 
 4. Explain — with a measurement, not a slide — the difference between an embedded database and a client/server database, and why most local apps should not run a server.
-- 
+- [Embedded vs. client/server, with a measurement](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#4-embedded-vs-clientserver-with-a-measurement)
+
 6. Load real rows into SQLite and query them from Python using bound parameters.
 7. Take a first LLM-generated query, run it, and begin the habit that defines this course: verify before you trust.
 
