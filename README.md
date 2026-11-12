@@ -9,7 +9,7 @@
 
 
 In my team for the final project, I also had the following members:
-- <replace these pointy brackets with their full name>,[portfolio link](https://github.com/partner/iot-portfolio)
+- Isa Babayev,[portfolio link]([https://github.com/partner/iot-portfolio](https://github.com/isa-babayev-ibabayev/databases-portfolio/tree/main))
 - <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
 
 Our team final project repository is [here](https://github.com/somewhere/final-iot-project)
