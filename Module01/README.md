@@ -73,10 +73,10 @@ I found the .help command the most helpful as it showed me all the commands i ne
 >**Dificulties faced :** 
 > The first run, my shell-tour.txt file would not have the right output and my SQL shell had gotten stuck. By troubleshooting with Claude, I discovered it was a simple syntax error of forgetting to place the ";" at the ned of the SELECT command. (Guess I continued the habit from OOPs 😝)
 
-### Task 5: 
+### Task 5: Play SQL Island
 SQL game progress and reflection can be found here: [sql-island.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/sql-island.md)
 
-### Task 6:
+### Task 6: Load real telemetry and query it from Python
 Generator Script: [generate_telemetry.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
 
 Queries, File Size, Row Count and answers: [Queries, Size & Row Count, Answer](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
@@ -210,7 +210,7 @@ temp_c >30 ✖
 ...
 ```
 
-### Task 11:
+### Task 11: Datasette Lite & sqlite-utils — the same job, other tools
 
 Insert file for toolbox.md here
 
