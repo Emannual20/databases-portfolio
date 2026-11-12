@@ -28,17 +28,17 @@ The first class. We open with a short introduction to **how this class works** (
 ## **1. How this class works**<br>
 The course is problem-based: I had to find answers and explanations myself, by reading documentation, asking an LLM, comparing against my team members (Sanjay, Jo Marie and Lin), and fixing my own mistakes. My portfolio (Task 1, 2 and 3) is the evidence so every task has visible proof, such as commands, outputs and screenshots.<br>
 
-Task Evidence:
-**Task 1:** [My portfolio](https://github.com/Emannual20/databases-portfolio)
-**Task 2:**
-> My partners:
+**Task Evidence:**
+>**Task 1:** [My portfolio](https://github.com/Emannual20/databases-portfolio) <br>
+>**Task 2:** <br>
+> My partners:<br>
 > - Sanjay, [Sanjay portfolio link](https://github.com/yajnas-crpto/databases_portfolio_sanjay)
 > - Jo Marie, [Jo Marie portfolio link](https://github.com/jmanuel08/database-jomportfolio)
-> - Myomin Lin, [Myomin Lin portfolio link](https://github.com/mmlin801597/database-portfolio)
-**Task 3:**
-UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
-Committed PyProject: [Pyproject.toml](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)<br>
-UV Lock: [uv.lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)<br>
+> - Myomin Lin, [Myomin Lin portfolio link](https://github.com/mmlin801597/database-portfolio) <br>
+>**Task 3:** <br>
+> - UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
+> - Committed PyProject: [Pyproject.toml](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/pyproject.toml)<br>
+> - UV Lock: [uv.lock](https://github.com/Emannual20/databases-portfolio/blob/main/uv.lock)<br>
 
 
 ## **2. Personal GitHub portfolio and .gitignore**<br>
