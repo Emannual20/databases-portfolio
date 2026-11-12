@@ -54,6 +54,7 @@ Embedded server means a locally run on a machine, it keeps its own data locally.
 > **Task 6:** [Load real telemetry and query it from Python](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#task-6-load-real-telemetry-and-query-it-from-python)
 > - [Generator Script](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/generate_telemetry.py)
 > - [Queries, File Size, Row Count and answers](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/query_results.txt)
+> 
 > **Task 9:** [Comparing file sizes between backup.db and compact.db, the file sizes are identical](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/README.md#comparing-file-sizes-between-backupdb-and-compactdb-the-file-sizes-are-identical)
 
 ## **5. Loading rows into SQLite and querying them from Python**<br>
