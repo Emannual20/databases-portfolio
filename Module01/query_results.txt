@@ -29,4 +29,3 @@ Mode                 LastWriteTime         Length Name
 what would this dataset cost to run in the cloud, and who would pay for it?
 
 At about 172,800 rows and roughly 10 MB, this dataset would cost from a few cents to about $15 a month in the cloud (object storage at the low end, the smallest managed database at the high end), and the machine shop, as the owner of the data and the monitoring system, would be the one paying, either directly or through a monitoring vendor’s subscription fee.
-(Courtesy of Claude)
