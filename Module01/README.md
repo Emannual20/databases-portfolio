@@ -29,7 +29,7 @@ The first class. We open with a short introduction to **how this class works** (
 The course is problem-based: I had to find answers and explanations myself, by reading documentation, asking an LLM, comparing against my team members (Sanjay, Jo Marie and Lin), and fixing my own mistakes. My portfolio (Task 1, 2 and 3) is the evidence so every task has visible proof, such as commands, outputs and screenshots.<br>
 
 **Task Evidence:**
->**Task 1:** [My portfolio](https://github.com/Emannual20/databases-portfolio) <br>
+>**Task 1:** [My portfolio](https://github.com/Emannual20/databases-portfolio#sebastians-databases-portfolio) <br>
 >**Task 2:** [My partners](https://github.com/Emannual20/databases-portfolio/blob/main/README.md#my-partners) <br>
 >**Task 3:**
 > - UV Verififcation: [uv-check.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module01/uv-check.py)<br>
