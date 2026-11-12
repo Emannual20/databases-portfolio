@@ -30,6 +30,8 @@ Candidate Key: Minimal set of attributes to determine the full details.
 
 Example: job_id is not enouhg information as one job can have multiple parts, we instead pair (job_id, part_no) a unique combination.
 
+Isa explined to me Normliztion nd Denormliztion, s well s the ndexing. [Include Clssroom Discussion file, link portfolios of reflections to one nother for dditionl evidence nd portfolios to Module 05]
+
 ## Round 1: See It
 
 My observations of the FDs:
