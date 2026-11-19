@@ -1,0 +1,251 @@
+{
+  "database": "Module05\\normalize_test.db",
+  "sqlite_version": "3.53.1",
+  "runs": 9,
+  "method": "one warm-up per query; then interleaved, alternating query order; perf_counter_ns; full fetchall; milliseconds",
+  "query_definitions": {
+    "normalized": "SELECT m.machine_id, m.site, j.technician, SUM(p.part_price) AS cost\nFROM job j\nJOIN machine m ON m.machine_id = j.machine_id\nJOIN job_part jp ON jp.job_id = j.job_id\nJOIN part p ON p.part_no = jp.part_no\nWHERE j.done_on >= date('2026-03-01')\nGROUP BY m.machine_id, j.technician",
+    "denormalized": "SELECT machine_id, site, technician, SUM(part_price) AS cost\nFROM report_jobpart\nWHERE done_on >= date('2026-03-01')\nGROUP BY machine_id, technician"
+  },
+  "row_counts": {
+    "flat_jobpart": 200000,
+    "machine": 50,
+    "part": 10,
+    "job": 20000,
+    "job_part": 200000,
+    "report_jobpart": 200000
+  },
+  "result_rows": {
+    "normalized": 350,
+    "denormalized": 350
+  },
+  "results_equivalent": true,
+  "foreign_key_violations": [],
+  "foreign_keys_enabled_in_insert_test": true,
+  "foreign_key_rejects_orphan_insert": true,
+  "relationship_violation_counts": {
+    "job_has_one_machine_technician_date": 0,
+    "machine_has_one_site": 0,
+    "part_has_one_price": 0,
+    "job_part_key_unique": 0
+  },
+  "integrity_check": "ok",
+  "raw_runs": {
+    "normalized": [
+      {
+        "round": 1,
+        "elapsed_ms": 91.658,
+        "rows": 350
+      },
+      {
+        "round": 2,
+        "elapsed_ms": 91.0009,
+        "rows": 350
+      },
+      {
+        "round": 3,
+        "elapsed_ms": 85.7559,
+        "rows": 350
+      },
+      {
+        "round": 4,
+        "elapsed_ms": 108.3128,
+        "rows": 350
+      },
+      {
+        "round": 5,
+        "elapsed_ms": 81.3511,
+        "rows": 350
+      },
+      {
+        "round": 6,
+        "elapsed_ms": 88.1554,
+        "rows": 350
+      },
+      {
+        "round": 7,
+        "elapsed_ms": 100.2769,
+        "rows": 350
+      },
+      {
+        "round": 8,
+        "elapsed_ms": 86.1143,
+        "rows": 350
+      },
+      {
+        "round": 9,
+        "elapsed_ms": 91.1176,
+        "rows": 350
+      }
+    ],
+    "denormalized": [
+      {
+        "round": 1,
+        "elapsed_ms": 107.2007,
+        "rows": 350
+      },
+      {
+        "round": 2,
+        "elapsed_ms": 109.4273,
+        "rows": 350
+      },
+      {
+        "round": 3,
+        "elapsed_ms": 126.1986,
+        "rows": 350
+      },
+      {
+        "round": 4,
+        "elapsed_ms": 96.4397,
+        "rows": 350
+      },
+      {
+        "round": 5,
+        "elapsed_ms": 99.0126,
+        "rows": 350
+      },
+      {
+        "round": 6,
+        "elapsed_ms": 100.9469,
+        "rows": 350
+      },
+      {
+        "round": 7,
+        "elapsed_ms": 135.1394,
+        "rows": 350
+      },
+      {
+        "round": 8,
+        "elapsed_ms": 112.1616,
+        "rows": 350
+      },
+      {
+        "round": 9,
+        "elapsed_ms": 108.4596,
+        "rows": 350
+      }
+    ]
+  },
+  "summary": {
+    "normalized": {
+      "median_ms": 91.0009,
+      "min_ms": 81.3511,
+      "max_ms": 108.3128,
+      "spread_ms": 26.961699999999993
+    },
+    "denormalized": {
+      "median_ms": 108.4596,
+      "min_ms": 96.4397,
+      "max_ms": 135.1394,
+      "spread_ms": 38.69969999999999
+    }
+  },
+  "plans": {
+    "normalized": [
+      [
+        13,
+        0,
+        216,
+        "SCAN jp"
+      ],
+      [
+        15,
+        0,
+        45,
+        "SEARCH j USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      [
+        23,
+        0,
+        47,
+        "SEARCH m USING INDEX sqlite_autoindex_machine_1 (machine_id=?)"
+      ],
+      [
+        28,
+        0,
+        47,
+        "SEARCH p USING INDEX sqlite_autoindex_part_1 (part_no=?)"
+      ],
+      [
+        33,
+        0,
+        0,
+        "USE TEMP B-TREE FOR GROUP BY"
+      ]
+    ],
+    "denormalized": [
+      [
+        7,
+        0,
+        224,
+        "SCAN report_jobpart USING INDEX ix_report_machine"
+      ],
+      [
+        15,
+        0,
+        0,
+        "USE TEMP B-TREE FOR GROUP BY"
+      ]
+    ]
+  },
+  "database_file_bytes": 37138432,
+  "page_count": 9067,
+  "page_size": 4096,
+  "dbstat": {
+    "flat_jobpart": 11890688,
+    "machine": 4096,
+    "part": 4096,
+    "job": 655360,
+    "job_part": 3407872,
+    "report_jobpart": 11091968,
+    "indexes": [
+      [
+        "ix_flat_machine",
+        2990080
+      ],
+      [
+        "ix_report_machine",
+        2990080
+      ],
+      [
+        "sqlite_autoindex_job_part_1",
+        4087808
+      ],
+      [
+        "sqlite_autoindex_machine_1",
+        4096
+      ],
+      [
+        "sqlite_autoindex_part_1",
+        4096
+      ]
+    ]
+  },
+  "index_configuration": [
+    [
+      "ix_flat_machine",
+      "flat_jobpart",
+      "CREATE INDEX ix_flat_machine ON flat_jobpart(machine_id)"
+    ],
+    [
+      "sqlite_autoindex_job_part_1",
+      "job_part",
+      null
+    ],
+    [
+      "sqlite_autoindex_machine_1",
+      "machine",
+      null
+    ],
+    [
+      "sqlite_autoindex_part_1",
+      "part",
+      null
+    ],
+    [
+      "ix_report_machine",
+      "report_jobpart",
+      "CREATE INDEX ix_report_machine ON report_jobpart(machine_id)"
+    ]
+  ]
+}

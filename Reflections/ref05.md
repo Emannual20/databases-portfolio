@@ -1,54 +1,39 @@
-# Reflection 1 in Module 1
+﻿# Reflection 5 — Normalization vs. Denormalization
 
-- What is your take-away, what do you want to remember, what would be your advice?
-  Take-away can be small summary, but better outstanding points.
-- What was good?
-- What was difficult, where did you struggle?
-- Was there any good/fun “struggling”/exploration?
-  Any show stoppers – anything where you should reach out to peers or instructors? 
-- How was your interaction with peers/instructors?
-- Help and extra work
-  - Who helped you, gave feedback, was it valuable?
-  - Who did you help, gave feedback to?
-  - Did you present, implement, made a PR, or fix something that was crucial for the class in itself?
+Use this template for the Module 5 session. Keep the reflection in your own words; do not fill in experiences or opinions you did not have.
 
-# Reflection 1 (9/10/2026)
+**Session date:** [add date]
 
-**What is your take-away, what do you want to remember, what would be your advice? Take-away can be small summary, but better outstanding points.**
+**What is your take-away? What do you want to remember, and what advice would you give?**
 
-My takeaway is the importance and usefulness of databases. Previously, I thought the most important skill in programming was understanding and writing with lagnuages such as Python or C. However, I discovered databases are the backbone of the backend which allows the whole system keep data privately and securely.
+[Write your own reflection.]
 
 **What was good?**
 
-The topics were interesting, and learning and brainstorming as a team felt more engaging than a lecture with slides. The game was a fun way to learn about SQL as well, how we use human language to pull data from files.
+[Write your own reflection.]
 
-**What was difficult, where did you struggle?**
+**What was difficult, and where did you struggle?**
 
-We struggled a little as a team, as my team member Sanjay had never used Git before. We had to assist in their set up, but once we became familiar with the web page it was easier to navigate and find the resources we needed.
+[Write your own reflection.]
 
-> **Difficulties Faced :**
-> 1. Did not really understand part 3, as i was confused between the Program Github CLI and the Github desktop application which i already had isntalled.<br>
-> **Solution:** Using gemini for help, I managed to clone it via the terminal, since that is the main tool that will be used for future lectures. Understanding how to utilize the command prompt on windows will be useful for the future modules to come as we will mainly be working on there.
-> 2. Could not find the instructors GitHub Username, team member **Sanjay** had to help me with locating the usename and adding the professor as a collaborator.<br>
-> **Solution :** No shame in asking for help!
+**Was there an interesting or fun exploration? Any question to bring to peers or the instructor?**
 
-**Was there any good/fun “struggling”/exploration?**  
-> Any show stoppers – anything where you should reach out to peers or instructors?
+[Write your own reflection.]
 
-During the game, it was funny to see how badly we were struggling, at a certain point we were simply trying our luck with the commands. However, after asking help from the other groups, suchas when Elijah helped us with a few prompts, we managed to understand the language and logic better, and could finish the game on track.
+**How was your interaction with peers and instructors?**
 
-**How was your interaction with peers/instructors?**
-
-It was very fun to work with my team members as well as the teams around us, relating to each others struggles with the game and the satisfaction of getting through each level wa an interesting and rewarding experience. The professor was quite patient and managed to answer my questions, and it was very interesting talking to someone about Singapore and that he loves to eat Durian as well :)   
+[Write your own reflection.]
 
 ## Help and extra work
-**Who helped you, gave feedback, was it valuable?**
 
-Elijah helped us with the game, during the prompt question of 
-![Difficulties faced](pictures/Elijah_help)
+**Who helped you or gave feedback? Was it useful?**
 
-**Who did you help, gave feedback to?**
+[Write your own reflection.]
 
-I helped Mohammed with the Github isntallation and copying over the folder, to create his own portfolio
+**Who did you help or give feedback to?**
 
-** Did you present, implement, made a PR, or fix something that was crucial for the class in itself? **
+[Write your own reflection.]
+
+**Did you present, implement, or fix anything important for the class?**
+
+[Write your own reflection.]
