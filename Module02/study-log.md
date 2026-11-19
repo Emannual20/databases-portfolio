@@ -1,3 +1,6 @@
+# Study Log File
+Contains all tasks, notes adn links to task evidence
+
 ## Task A: Study in your pod
 
 **Reference Links:**
@@ -25,10 +28,14 @@ Source URL: [Surrogate Key](https://en.wikipedia.org/wiki/Surrogate_key)<br>
 
 "How do you draw an Entity Relationship Diagram in SQL": [How to Draw ER Diagrams](https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/)
 
-Remarkable things — surprises, "aha"s, and counterexamples (e.g. "a name looked like a key but had duplicates").
+### Remarkable things — surprises, "aha"s, and counterexamples:
+- A JOIN that succeeds silently while dropping valid records: `Running SELECT j.job_id, p.description FROM maint_job j JOIN part p ON p.part_no = j.parts_used` returns zero errors and cleanly outputs jobs 2 and 3, while silently erasing Job 1 (parts_used = 'P-1001,P-1002'). The absence of an error message makes a 1NF violation far more dangerous in production than a crash.
+
+- Natural keys without constraints are just suggestions: part_no looks like an obvious natural primary key, yet legacy.db contains two identical rows for 'P-1003' (Coolant filter, 9.90). Without an explicit `PRIMARY KEY` or `UNIQUE` constraint, duplicate natural keys corrupt inventory counts and `JOIN` fan-out.
 
 
-LLM Q&A — for each prompt you tried: the prompt, a 2–3 line summary of the answer, and how you verified it (and where it was wrong).
+### LLM Q&A — for each prompt you tried
+- 
 
 
 Your two best found ER sketches — hunt down ER/EER example sketches that teach you the most, then compile down to the best two:
