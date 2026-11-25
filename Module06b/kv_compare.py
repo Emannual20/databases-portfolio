@@ -95,7 +95,7 @@ def run(runs: int = RUNS) -> dict[str, object]:
               "measurements": summary,
               "sqlite_cross_session_query": {"description": "count sessions where city=2 and user_id=6", "count": cross},
               "values_validated_each_run": True,
-              "note": "shelve's dbm backend and file layout vary by operating system; compare only measurements from the recorded platform.")
+              "note": "shelve's dbm backend and file layout vary by operating system; compare only measurements from the recorded platform."}
     (RESULTS / "kv-results.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
     with (RESULTS / "kv-results.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)

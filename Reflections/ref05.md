@@ -1,12 +1,10 @@
-﻿# Reflection 5 — Normalization vs. Denormalization
+# Reflection 5 — Normalization vs. Denormalization
 
-Use this template for the Module 5 session. Keep the reflection in your own words; do not fill in experiences or opinions you did not have.
-
-**Session date:** [add date]
+**Session date:** [5/11/2026]
 
 **What is your take-away? What do you want to remember, and what advice would you give?**
 
-[Write your own reflection.]
+My main takeaway from this session was 
 
 **What was good?**
 
@@ -37,3 +35,4 @@ Use this template for the Module 5 session. Keep the reflection in your own word
 **Did you present, implement, or fix anything important for the class?**
 
 [Write your own reflection.]
+

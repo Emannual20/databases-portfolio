@@ -42,6 +42,7 @@ def build_history() -> dict[str, object]:
                 raise RuntimeError(f"History validation failed: rows={count}, dates={min_date}..{max_date}, sum={total}")
             if con.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
                 raise RuntimeError("SQLite integrity_check failed for generated history")
+        con.close()
         os.replace(tmp_db, HISTORY_DB)
     finally:
         tmp_db.unlink(missing_ok=True)

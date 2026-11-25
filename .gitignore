@@ -7,4 +7,11 @@
 /Course_Materials/
 .env
 __pycache__/
+Module06a/report_jobpart.csv
+Module06a/benchmark-results/*.csv
+Module06a/benchmark-results/*.json
+Module06a/benchmark-results/*.txt
+Module06b/results/*.csv
+Module06b/results/*.json
+Module06b/results/*.txt
 
