@@ -16,34 +16,20 @@
 
 **What is your take-away, what do you want to remember, what would be your advice? Take-away can be small summary, but better outstanding points.**
 
-My takeaway is understanding of relationships. I want to remember the different types of relationships and methods of writing we learned today, for example many to one (1:n), one to one (1:1) etc. We also learned about entities, attributes, which are essential terminology for working with databases in the future.<br>
-
-It is better to build the diagrams myself instead of using AI, so that it is proof of my own learning and understanding of the cardinality and keys between entities/junction tables.<br>
-
+My takeaways from this module are Diagnosing EXPLAIN QEURY PLAN (e.g. SCAN vs SEARCH), understanding that SCAN revelas an expensive full table read caused by uninxdexed filters, while SEARCH confrism targeted index lookups. 
 **What was good?**
 
-The topics were interesting, and learning and brainstorming as a team felt more engaging than a lecture with slides. Brainstorming and working on the diagrams was where I learned the most in understanding cardinality and foreign/private keys.
 
 
 **What was difficult, where did you struggle?**
 
-We struggled a little as a team, as my team member Sanjay had never used Git before. We had to assist in their set up, but once we became familiar with the web page it was easier to navigate and find the resources we needed.
-
-Finding the defects was challenging as we were still unfamiliar with SQL syntax, from reading the queries it was difficult to tell what the issue was. With the help of AI, it could identify the defects quickly, but understanding the defect was the difficult part.
-
-_Difficulties faced in Task 3:_<br>
-- Understanding what is a constraint, and what does enforcement mean.
-
-**Claude response:** Constraint is a rule about what data is allowed in my tables (>e.g. Name can't be blank)
-
-**Claude Response:** Enforce a rule means something actively stops the rule from being broken. Enforcement is the check, plus what happens when the check fails. 
-
-- Example for our Python contract.py, Someone tries to Add a machine with serial XX-1 through the Pydantic model	Rejected: “serial numbers must start with â€˜SN-â€™”
-
-- We can enforce it by pydantic, which essentially catches our error in the python code, such as friendly formats, business rules. Enforcing in the database means rules that must never break (unique keys, foreign keys not empty)
+I struggled to understand why creating indexes lke ix_orderline_product for full-year scans had not managed to speed up reads and actually was dead weight. It took soemtimesot understand when to create indexing, and when to use SCAN. After discovering that indexing is expensive becuase the program has to jump to each page everytime, which consumes a high amount of memeory as each page is about 4kb. For low selectvitiy requirements, it is better to use SCAN to save time and resources.
 
 **Was there any good/fun “struggling”/exploration?**  
 > Any show stoppers – anything where you should reach out to peers or instructors?
+
+I enjoyed testing the parameters, and learning about the enforcement of bound parameters. Parameterized queries strcitly seperate SQL command structure from user input data, which completely prevents apostrophe based SQL injection. Protectign the databases from potential malicious injections or accidental inputs htta can break the system silently.
+
 
 **How was your interaction with peers/instructors?**
 
@@ -53,7 +39,6 @@ _Difficulties faced in Task 3:_<br>
 
 **Who did you help, gave feedback to?**
 
-I helped our new Pod member Lin with the set up of his template the installation and helping navigate around GitHub. Since our first week, I have learned a lot about markdown syntax, using the various github tools and troubleshooting after much of going through my own troubles. This allowed me to assist my new Pod member with his set up, and quickly helped him catch up. 
 
 ** Did you present, implement, made a PR, or fix something that was crucial for the class in itself? **
 

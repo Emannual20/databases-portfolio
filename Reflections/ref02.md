@@ -24,7 +24,6 @@ It is better to build the diagrams myself instead of using AI, so that it is pro
 
 The topics were interesting, and learning and brainstorming as a team felt more engaging than a lecture with slides. Brainstorming and working on the diagrams was where I learned the most in understanding cardinality and foreign/private keys.
 
-
 **What was difficult, where did you struggle?**
 
 We struggled a little as a team, as my team member Sanjay had never used Git before. We had to assist in their set up, but once we became familiar with the web page it was easier to navigate and find the resources we needed.
@@ -56,7 +55,7 @@ The group discussions helped particularly with the Entity Relationship Models, a
 ## Help and extra work
 **Who helped you, gave feedback, was it valuable?**
 
-Sanjay helped me with e understanding of constraints and enforcement. He also assisted with the hardware problem, navigating windows terminal and the courses's Unix-style instructions. Most valuably, he helped with the issues with pushing to Git, as I made the mistake of working locally before pulling, causing a conflict with the push and merge. 
+Sanjay helped me with the understanding of constraints and enforcement. He also assisted with the hardware problem, navigating windows terminal and the courses's Unix-style instructions. Most valuably, he helped with the issues with pushing to Git, as I made the mistake of working locally before pulling, causing a conflict with the push and merge.
 
 **Who did you help, gave feedback to?**
 
