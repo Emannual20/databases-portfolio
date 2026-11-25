@@ -1,6 +1,6 @@
-### Task 1: Reconstruct the ER Model
+## Task 1: Reconstruct the ER Model
 
-**Identified Entities & Intended Keys**
+### Entities and intended keys
 
 1. Machine
 * **Attributes:** `machine_id` (Surrogate Key / candidate), `machine_name`, `serial_no`, `site`, `installed_date`
@@ -27,7 +27,7 @@
 * **Intended Composite Primary Key:** `(job_id, part_no)`
   * *Audit Notes:* Currently represented as a comma-separated string in `maint_job.parts_used` (e.g., `'P-1001,P-1002'`), violating First Normal Form (1NF). Must be unnested into a proper $m:n$ junction table.
 
-2. **Reconstructed ER Diagram**
+### Reconstructed ER diagram
 
 ```mermaid
 erDiagram
@@ -66,7 +66,7 @@ erDiagram
     }
 ```
 
-3. **Cardinality Findings**
+### Cardinality findings
 
 The database contains:
 - **Machines:** 4 rows

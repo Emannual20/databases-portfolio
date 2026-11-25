@@ -33,12 +33,12 @@ I enjoyed testing the parameters, and learning about the enforcement of bound pa
 
 **How was your interaction with peers/instructors?**
 
+I helped explain to the group the differences between the written order of SQL and the order in which they are evaluated. My teamamtes also discussed the different findings for our respective parts, and we were joined my new team member Isa, who helped us with relational algebra nad how to convert SQL commands into algebraic expressions.
 
 ## Help and extra work
 **Who helped you, gave feedback, was it valuable?**
 
+Sanjay helped us with the query plan terminology explanation, as well as the AI prompting which allowed us to better understnad the tasks in general. 
+
 **Who did you help, gave feedback to?**
-
-
-** Did you present, implement, made a PR, or fix something that was crucial for the class in itself? **
 

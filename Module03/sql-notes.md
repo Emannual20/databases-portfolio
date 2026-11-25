@@ -20,6 +20,8 @@ Logial Execution Order: <br>
 6) DISTINCT
 
 ## Task A: Plan safari
+### Equality without an index: full scan
+
 **Our predictions: SCAN**
 ``` sql
 SELECT * FROM maint_job WHERE technician = 'Beier';
@@ -38,6 +40,8 @@ SELECT * FROM machine WHERE machine_name = 'cnc-02';
 QUERY PLAN
 `--SCAN machine
 ```
+### Leading wildcard: index still cannot narrow the search
+
 **Our predictions: SEARCH**
 ``` sql
 SELECT * FROM maint_job WHERE technician LIKE '%ei%';
@@ -47,6 +51,8 @@ SELECT * FROM maint_job WHERE technician LIKE '%ei%';
 QUERY PLAN
 `--SCAN maint_job
 ```
+### Equality after adding an index: SEARCH
+
 **After adding the index:**
 
 **Result 1:**
@@ -94,9 +100,11 @@ LLM Comparison: We asked Gemini to translate the same query. We completely agree
 5. What does printf('%05d', x) buy you? Zero-padding makes text sort in numeric order.
 
 
-### Task 3: The Injection Drill
+## Task 3: The Injection Drill
 
 Insert python file here
+
+### Vulnerable and safe query results
 
 **Output:**
 ```
@@ -104,6 +112,8 @@ normal   : [(1, 'Customer 1')]
 injected : [(1, 'Customer 1'), (2, 'Customer 2'), (3, 'Customer 3')] ...
 safe     : []
 ```
+
+### Why bound parameters stop the payload
 
 **Payload used:** ' OR '1'='1
 
@@ -114,7 +124,9 @@ It is also exposed to other contexts, for example if it is searching in columns 
 
 Hand-escaping means checking every outside value that goes into a query and applying the correct escaping rule for its context and database, to stop it from breaking the query or being read as SQL. It’s fragile because one missed or wrong rule creates a hole, whereas bound parameters keep data and code separate automatically.
 
-### Task 4: One query, from algebra to plan
+## Task 4: One query, from algebra to plan
+
+### SQL query
 
 **Original Query:**
 ``` sql
@@ -122,6 +134,8 @@ SELECT o.order_id, o.ordered_on, c.name
 FROM orders o JOIN customer c ON c.customer_id = o.customer_id
 WHERE o.ordered_on = '2026-02-14';
 ```
+
+### Relational algebra expression
 
 **Relational Algebra Expression:**
 ```

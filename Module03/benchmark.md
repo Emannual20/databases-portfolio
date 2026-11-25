@@ -1,4 +1,6 @@
-### Task 2: Index benchmark
+## Task 2: Index benchmark
+
+### Annual aggregation: index comparisons
 
 **Insert optimized query here:**<br> ![Optimied Prompt](pictures/Task_2_index_becnhmark_optimized_query.png)
 ``` sql
@@ -95,6 +97,8 @@ QUERY PLAN
 
 **Test 3 Observation:** The plan for Test 3 is identical to Test 2, and the execution time (10.30 ms) is virtually identical to Test 2 (9.79 ms). As ix_orderline_product is dead weight for this query. The query joins p.product_id = ol.product_id. Lookups go from order_line $\rightarrow$ product (using product's Primary Key). Searching order_line by product_id was never required.<br>
 
+
+### Selective single-day lookup and amortized timing
 
 **STEP 4: Single-Day Lookup WITHOUT Indexes (Baseline)**
 ``` sql

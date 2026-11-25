@@ -1,4 +1,6 @@
-### Task 5: Window functions and a subquery rewrite
+## Task 5: Window functions and a subquery rewrite
+
+### Original GROUP BY query and plan
 
 **Original Query:**
 ``` sql
@@ -18,6 +20,8 @@ QUERY PLAN
 |--USE TEMP B-TREE FOR GROUP BY
 `--USE TEMP B-TREE FOR ORDER BY
 ```
+
+### Correlated subquery rewrite and plan
 
 **LLM Rewritten with correlated subquery:**
 ``` sql
@@ -50,6 +54,8 @@ QUERY PLAN
 `--USE TEMP B-TREE FOR ORDER BY
 ```
 
+### Window-function rewrite and plan
+
 **LLM Rewritten with window function:**
 ``` sql
 SELECT DISTINCT
@@ -74,6 +80,8 @@ QUERY PLAN
 |--USE TEMP B-TREE FOR DISTINCT
 `--USE TEMP B-TREE FOR ORDER BY
 ```
+### What the rewrite comparison showed
+
 When prompted to perform simple aggregation or summary grouping across joined tables without specific structural constraints, LLMs default to the standard GROUP BY with an aggregate function (COUNT(*)) as the primary solution.
 
 Reasoning: GROUP BY represents the idiomatic SQL pattern for relational aggregation, produces the cleanest query plan, and forms the core training baseline for SQL summary reports.

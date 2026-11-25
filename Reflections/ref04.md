@@ -6,7 +6,7 @@ We decided to work remotely this time, as the classroom was too packed from the 
 We firstly helped Pod member Htete catch up to the latest module we were working on, and made sure we all were standardized and on the same page. 
 
 
-# Reflection 4 (11/11/2026)
+# Reflection 4 (5/11/2026)
 
 **What is your take-away, what do you want to remember, what would be your advice? Take-away can be small summary, but better outstanding points.**
 

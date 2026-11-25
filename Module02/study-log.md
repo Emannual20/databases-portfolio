@@ -3,6 +3,8 @@ Contains all tasks, notes adn links to task evidence
 
 ## Task A: Study in your pod
 
+### Entities, attributes, relationships, and keys
+
 **Reference Links:**
 
 From this source, I understood the definition of entities, attributes and relationships. An entity is a thing that contains facts (e.g. A student, A Computer), attribute describes an entity (e.g.Student has an ID, Computer has a Serial Number) A relationship lniks entities, usually a verb (.e.g Student **Attends** Math, Student **Owns** Computer)<br>
@@ -43,20 +45,30 @@ Your two best found ER sketches — hunt down ER/EER example sketches that teach
 ## Task B: From words to sketch
 All diagrams were self-made in draw.io, with help from Geeks for Geeks<br>
 
+### Cardinality 1:1: machine and nameplate
+
 **1:1** A workshop keeps machines. Each machine has exactly one nameplate (serial number, manufacturer), and each nameplate belongs to exactly one machine. → Key goes to the many side, and the nameplate is its own entity.
 
 ![1:1](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1to1%20A%20Workshop%20Keeps%20machines.drawio.svg)
+
+### Cardinality 1:n: machine and sensors
 
 **1:n** Each machine carries many sensors; every sensor is installed on exactly one machine. → The many side holds the foreign key.
 
 ![1:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/1ton%20diagram.drawio.svg)
 
+### Cardinality m:n: work orders and parts
+
 **m:n** — Work orders use many parts, and a part is used by many work orders; an order can list a given part only once. → We need a junction table, and it holds foreign keys.
 
 ![m:n](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/pictures/many%20to%20many.drawio.svg)
 
+### Entity vs. attribute: maintenance job and technician
+
 **Entity vs. attribute vs. relationship:** 
 A maintenance job happens on one machine, is done by one technician on one date; a technician performs many jobs. → Is the job a relationship or an entity? Is the technician an entity or just a name?
+
+### Prove cardinality in SQL
 
 Then prove one: write the CREATE TABLE for your favourite sketch, insert two rows, and show the COUNT query that demonstrates its cardinality.
 
@@ -120,7 +132,9 @@ A great rule of thumb that came out of our discussion: deciding whether somethin
 
 **ER Audit File:** [er-audit.md](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/er-audit.md)
 
-## Task 2: Find the integrity efects with queries
+## Task 2: Find integrity defects with queries
+
+### Defect: orphan maintenance job
 
 -- Defect 1: orphan maintenance jobs (machine_name not in machine)<br>
 SELECT m.job_id, m.machine_name
@@ -136,6 +150,8 @@ WHERE x.machine_name IS NULL;
 ```
 What breaks in production: job 3 references `cnc-05`, which doesn't exist in `machine`, so the job can't be attributed to any machine or site, and maintenance cost and downtime reports will silently leave it out.
 
+### Defect: duplicate natural key
+
 -- Defect 2: duplicate natural keys in part<br>
 SELECT part_no, COUNT(*) AS copies
 FROM part GROUP BY part_no HAVING COUNT(*) > 1;
@@ -148,6 +164,8 @@ FROM part GROUP BY part_no HAVING COUNT(*) > 1;
 ```
 P-1003 exists twice in part, so any join on part_no returns two rows for it, which double-counts job costs and parts usage, and a price lookup can return either copy with no way to tell which is right.
 
+### Defect: text price compared as text
+
 -- Defect 3: unit_price stored as text — a numeric comparison fails silently<br>
 SELECT part_no, unit_price FROM part WHERE unit_price < '15';   -- 'text ordering', not money!
 ```
@@ -158,6 +176,8 @@ SELECT part_no, unit_price FROM part WHERE unit_price < '15';   -- 'text orderin
 ╰─────────┴────────────╯
 ```
 unit_price is stored as text, so < '15' compares characters instead of numbers and wrongly includes or excludes parts ('100.00' counts as “under 15”, '9.99' doesn’t), which can produce wrong price filters, totals, and invoices without any error.
+
+### Defect: invalid installed date
 
 -- Defect 4: installed dates that are not dates<r>
 SELECT machine_name, installed FROM machine
@@ -170,6 +190,8 @@ WHERE installed NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]';
 ╰──────────────┴───────────╯
 ```
 Installed column is free text, so RANDOM-NAME holds 'unknown' instead of a date. Date arithmetic on it returns NULL or sorts wrongly, so warranty expiry and service-interval calculations silently skip or misjudge that machine, and nothing flags it.
+
+### Defect: comma-separated parts do not form a relationship
 
 -- Defect 5: the m:n list only "joins" when it holds exactly one part<br>
 SELECT j.job_id, p.description
@@ -189,11 +211,13 @@ JOIN part p ON p.part_no = j.parts_used;   -- the list is not a key
 ```
 parts_used holds a comma-separated list, so joining on it matches only single-part jobs: job 1 ('P-1001,P-1002') silently vanishes from parts reports, and job 2 is double-counted because P-1003 is duplicated, so parts usage and cost come out wrong while the query still reports success.
 
-### Task 3: Write the data contract in code
+## Task 3: Write the data contract in code
 
 Python File: [contract.py](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/contract.py)
 
 Emitted DDL File: [emitted-ddel.sql](https://github.com/Emannual20/databases-portfolio/blob/main/Module02/emitted-ddl.sql)
+
+### Code-first validation and constraints
 
 Field Validator is the Pydantic checker in the Python code that checks if the Srrial Number begins with SN_ and for SQLite enforces rules such as nullable=False (NOT NULL) jects the row if that column is empty. Other rules and explanations:<br>
 UniqueConstraint("serial_no")	Looks through existing values and rejects a repeat <br>
@@ -203,11 +227,15 @@ ForeignKey(...)	Looks up the referenced table and rejects the row if the target 
 
 ## Task 4: Model inheritance and prove it
 
+### Disjoint subtype rule
+
 Assumptions: A machine is a CNC mill or an injection molder, never both (disjoint).
 **Attributes (from contract.py):** machine_id, serial_no, site, installed
 **Extra attributes:**
 **CNC mill:** spindle_rpm_max, axes<br>
 **Injection molder:** shot_volume_cm3, drive_type (hydraulic / electric / hybrid)<br>
+
+### Design A: one table with a discriminator
 
 **Design A: one table with a discriminator column**
 ```
@@ -233,6 +261,8 @@ CREATE TABLE machine (
 );
 ```
 machine_type is the discriminator. The subtype columns must allow NULL, because a mill row has no clamp or shot data. The table-level CHECK brings the strictness back: a mill must fill its own columns and leave the molder's empty, and the other way round.<br>
+### Design B: separate subtype tables
+
 **Design B: separate tables**
 ```
 CREATE TABLE cnc_mill (
@@ -249,10 +279,14 @@ CREATE TABLE injection_molder (
 ```
 Each subtype table's primary key is also a foreign key to machine, which is how "a mill is a machine" is written in tables. Subtype columns can be NOT NULL, and nothing sits empty.
 
+### Design decision
+
 **Decision:** I would ship Design A<br>
 **Rationale:** I would ship Design A because with only two extra columns per type, one table with a discriminator and a CHECK is the simplest schema that still makes a machine impossible to be both types, and it needs no joins.
 
 ## Task 5 (Stretcher): Mermaid ER diagrams — collect, convert, and critique
+
+### Good example: library loans
 
 1. **Good Example:** Good:library loans <br>
 ```mermaid
@@ -286,6 +320,8 @@ erDiagram
 
 What makes it good: a book and a physical copy are separate entities, because a library owns many copies of one title. LOAN is an associative entity that holds facts about the pairing (the dates). Every line has a meaningful verb, and the keys are visible.
 
+### Strange example: a ternary relationship
+
 2. **Strange Example:** a ternary relationship<br>
 ```mermaid
 erDiagram
@@ -314,6 +350,8 @@ erDiagram
 ```
 
 What makes it strange: the fact being recorded (“supplier S supplies part P to project J”) involves three entities at once, which a plain line between two boxes can’t draw. Mermaid has no three-way symbol, so the relationship becomes its own table with three foreign keys that together form the key. The point to make: splitting it into three separate two-way relationships would lose information, since “S supplies P” and “S supplies to J” don’t tell you that S supplies P to J. <br>
+
+### Confusing example: direct many-to-many
 
 3. **Wrong or COnfusing Example:** an m:n drawn directly
 ```mermaid
