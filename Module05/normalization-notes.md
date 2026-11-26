@@ -26,7 +26,8 @@ Candidate Key: Minimal set of attributes to determine the full details.
 | `technician → machine_id` | Merely observed | Obsereved tech-0 only worked exlusively on cc-01 and tech-1 on cnc-02, but the 5 rows may not be sufficient to deem this as a fact. |
 
 **Bonus Functional dependency Observed by Isa:** [Isa Normalization Notes](https://github.com/isa-babayev-ibabayev/databases-portfolio/blob/main/Module05/normalization-notes.md)
-
+| Functional dependency | Assumptions | Reason |
+|---|---|---|
 | `job_id → done_on` | Domain assumption in the full schema | A job has one completion date. |
 
 (job_id, part_no) is a candidate key. Individually, the information on job_id is insufficient in identifying the full information of the row. Together the two attributes determine the job attributes, the machine site, and the part price.
