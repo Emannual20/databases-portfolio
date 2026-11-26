@@ -23,7 +23,7 @@ def convert() -> dict[str, object]:
         base = con.read_csv(str(CSV_PATH), header=True, auto_detect=True)
         expanded = base.query("base", f"""SELECT job_id + q.k * 1000000 AS job_id,
             machine_id, site, technician, part_no, part_price,
-            CAST(done_on AS DATE) + q.k * {DAYS_PER_QUARTER} AS done_on
+            CAST(done_on AS DATE) + CAST(q.k * {DAYS_PER_QUARTER} AS INTEGER) AS done_on
             FROM base CROSS JOIN range(0, {QUARTERS}) AS q(k)""")
         expanded.write_parquet(str(PARQUET_PATH), compression="zstd")
         count = con.execute("SELECT COUNT(*) FROM read_parquet(?)", [str(PARQUET_PATH)]).fetchone()[0]

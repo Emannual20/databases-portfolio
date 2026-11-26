@@ -12,11 +12,7 @@ Evidence references are generated experiment files; run the module scripts befor
 
 ## If Kortmann could run only one engine, which would it be — and what would break first?
 
-**Provisional engineering recommendation, not the student's personal defended decision:** choose SQLite as the single operational engine because ingest must be transactional and the workload includes mutable records. The month-end scan would likely become slower and compete with operations as history grows; validate the actual 6a numbers and production scale before making that trade-off. If the report dominates and ingest is low-volume, DuckDB plus external transactional handling may be viable, but the course evidence does not test a single-engine production deployment.
+**Provisional engineering recommendation:** choose SQLite as the single operational engine because ingest must be transactional and the workload includes mutable records. The month-end scan would likely become slower and compete with operations as history grows; validate the actual 6a numbers and production scale before making that trade-off. If the report dominates and ingest is low-volume, DuckDB plus external transactional handling may be viable, but the course evidence does not test a single-engine production deployment.
 
 ## Defence and personal decision
 
-- Personal choice and rationale: [STUDENT INPUT REQUIRED: Write your own decision after reviewing actual measurements.]
-- Pod agreement/disagreement: [STUDENT INPUT REQUIRED]
-- Neighbouring-pod findings: [STUDENT INPUT REQUIRED]
-- Peer defence feedback and changes: [STUDENT INPUT REQUIRED]
