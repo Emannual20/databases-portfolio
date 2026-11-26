@@ -52,6 +52,36 @@ The 3NF design moves job facts to `job`, machine location to `machine`, part pri
 > **Task 2:** [Update, insert, and delete anomalies](normalization-notes.md#task-2-break-it)
 > **Normalization notes:** [3NF explanation](normalization-notes.md)
 
+**Proposed normalized schema (3NF):**
+
+```mermaid
+erDiagram
+    MACHINE ||--o{ JOB : has
+    JOB ||--o{ JOB_PART : contains
+    PART ||--o{ JOB_PART : appears_in
+
+    MACHINE {
+        string machine_id PK
+        string site
+    }
+    JOB {
+        int job_id PK
+        string machine_id FK
+        string technician
+        date done_on
+    }
+    PART {
+        string part_no PK
+        float part_price
+    }
+    JOB_PART {
+        int job_id PK, FK
+        string part_no PK, FK
+    }
+```
+
+The editable [Draw.io schema source](proposed_schema.drawio) contains the same design.
+
 ## **3. Build and validate both designs**
 The setup script creates the data for the normalized and reporting designs. The benchmark checks that both queries return the same grouped results and records integrity checks alongside timing evidence, so performance comparisons are made over equivalent outputs.
 
