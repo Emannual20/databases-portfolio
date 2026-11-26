@@ -1,5 +1,63 @@
 # Module 6b — Polyglot Persistence & the Decision
 
+## 🎯 Learning Goals
+
+This module explores flexible schemas, key-value access patterns, and choosing an engine for each workload. By the end, I can:
+
+### Learning Goal 1
+Store **semi-structured JSON** in SQLite and query it with `json_extract`/`json_each` and an **expression index**.
+- [JSON experiment and index plans](./json_bench.py)
+- [JSON experiment results](./json-experiment-results.md)
+
+### Learning Goal 2
+Implement and evaluate a **key-value access pattern** against SQLite.
+- [Key-value comparison](./kv_compare.py)
+- [Key-value experiment results](./kv-experiment-results.md)
+
+### Learning Goal 3
+Explain **ACID vs. BASE** and the **CAP theorem** in terms of the systems actually tested.
+- [Theory notes](./theory.md)
+- [Engine notes](./engine-notes.md)
+
+### Learning Goal 4
+Choose an engine per workload and **defend the choice with a measurement**.
+- [Decision record](./decision-record.md)
+- [JSON and key-value evidence](./json-experiment-results.md) · [Key-value results](./kv-experiment-results.md)
+
+### Learning Goal 5
+Describe what changes and what gets harder when the same data lives on a **server**.
+- [PostgreSQL server comparison](./server_comparison.md)
+- [Engine notes](./engine-notes.md)
+
+## Reflection 6b
+[Reflection 6b](../Reflections/ref06b.md)
+
+<br>
+
+## Task Inspirations (Notes & Evidence)
+
+### **1. Store and query flexible JSON metadata**
+Use SQLite JSON functions to inspect metadata, enforce valid JSON, and compare query plans with and without the matching expression index.
+
+**Task evidence:** [json_bench.py](./json_bench.py) · [JSON experiment results](./json-experiment-results.md)
+
+### **2. Compare key-value access with SQLite**
+Run the same session workload through `shelve` and SQLite, record the timings and storage, then explain which option fits the workload.
+
+**Task evidence:** [kv_compare.py](./kv_compare.py) · [Key-value experiment results](./kv-experiment-results.md)
+
+### **3. Connect database theory to observed systems**
+Use the systems from the course to explain ACID, BASE, and CAP, and record the real server observations.
+
+**Task evidence:** [theory.md](./theory.md) · [server_comparison.md](./server_comparison.md) · [engine-notes.md](./engine-notes.md)
+
+### **4. Choose an engine for each workload**
+Complete the decision record with measurements or observations, then defend the choices and note any changes after discussion.
+
+**Task evidence:** [decision-record.md](./decision-record.md) · [experiment notes](./engine-notes.md) · [Reflection 6b](../Reflections/ref06b.md)
+
+<br>
+
 This module implements SQLite JSON metadata constraints and indexing, benchmarks a 50,000-session `shelve` workload against SQLite, and records the evidence-backed engine decisions. PostgreSQL measurements and student/group experiences remain explicit placeholders until observed.
 
 ## Files
